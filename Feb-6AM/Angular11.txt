@@ -1,0 +1,752 @@
+Angular-11:
+=============
+trainer: Srikanth Rallabandi...
+github repo: https://github.com/codewithsrikanth/Angular-Feb6AM
+codewithsrikanth@gmail.com
+
+Join URL: https://us02web.zoom.us/j/84738357261?pwd=L3REU1NYRGllUEo1UmRXcnppM3pOZz09
+Password: 974993
+
+Documentation Links:
+--------------------
+bootstrap:- https://getbootstrap.com/docs/4.1/components/forms/
+Javascript:- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+Typescript:- https://www.typescriptlang.org/docs/
+Angular:- https://angular.io/guide/setup-local
+NPMJS:- https://www.npmjs.com/package/bootstrap
+Node JS:- https://nodejs.org/en/
+
+Javascript best reference:
+----------------------------
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+### What is Angular ?
+-----------------------
+Angular is a frontend/client side javascript based framework used to build dynamic web based applications or mobile apps.
+Angular we can build SPA (Single Page Application )
+
+whenever we hit the URL on browser, request is processed by the web server
+and giving it back to the client web browser..
+
+### difference between Static web page Vs Dynamic Web Page ?
+--------------------------------------------------------------
+Static web page:
+	- which cant change the content
+	- HTML, CSS, Bootstrap etc.
+Dynamic Web Page: 
+	- for every request, which can change the content.
+	- javascript, jQuery, Angular JS, Angular, React JS etc
+	
+Pre-requisites to learn Angular:
+---------------------------------
+HTML, CSS
+Javascript Basics
+
+### difference between AngularJS Vs Angular?
+----------------------------------------------
+AngularJS is a library..
+Angular is a framework where we have lot of libraries integrated..component based architecture..
+
+### what is SPA ?
+-------------------
+complete content of Web Page is loaded directly once.. for first time..
+after that, if u click anyhwere page content will not load .. total page is not going to sent to server..
+how much content is required, it will sent to server and return the response back..
+we dont send entire page to server..
+it improves the performance..
+ex: facebook
+Lazy loading concept here..
+
+### Environment Setup:
+-------------------------
+If it is an Angular JS/jQuery library we are integrated with <script> tag.
+If it is Angular we must have some setup inorder to build and run the application.
+	- NodeJS
+	- NPM(Node JS Package Manager)
+	- Angular CLI(Commmand Line Interface)
+	- Typescript
+	- Visual Studio Code(IDE)
+	
+Node JS:
+--------
+- It is a server which relays on browser and takes the responsibility to execute Javascript.
+- To install node js we click on following link - https://nodejs.org/en/
+- To verify NodeJS was installed or not we use "node -v"
+
+> node -v
+v14.15.5
+
+NPM(Node JS Package Manager):
+-------------------------------
+NPM will get installed automatically once Node JS is installed.
+once you installed Node JS which will takes responsibility to get the packages from NPM.
+https://www.npmjs.com/package/
+
+> npm -v
+6.14.11
+
+Typescript:
+------------
+Typescript is a scripting/programming language. pure Object oriented programming..
+typescript compiler is required.
+
+typescript converts into javascript so browser can understand and run
+
+documentation: https://www.typescriptlang.org/docs/
+
+class Student{
+	
+	constructor(){
+		
+	}
+	
+	public GetData(){
+		
+	}
+}
+
+> npm install -g typescript   //-g global installation
+		> npm install -g typescript @3.8
+		> npm install -g typescript @latest
+		> npm install -g typescript @next  (for beta versions installation)
+> tsc -v
+Version 4.1.5
+
+Javascript:
+-------------
+drawback with Javascript..
+function Student(){}  //class
+function Student(x,y){} //constructor
+function GetData(){}   //function
+
+For any queries, you can call or whatsapp us on +91-8179191999 or email us to onlinetraining@nareshit.com
+
+Angular CLI(Commmand Line Interface):
+-------------------------------------
+used to create angular elements.
+
+documentation:- https://angular.io/guide/setup-local
+--------------
+> npm install -g @angular/cli
+
+//to verify Angular version..
+> ng version    //to verify version
+stable version is - 11.2.0
+
+Note: To update the version of Angular, If we already have it in our machine we use below commands
+	> npm uninstall -g @angular/cli
+	> npm clear cache
+	> Restart the computer
+	> npm install -g @angular/cli
+	
+
+Creating First Application:
+-----------------------------
+Open the command prompt from where we want to create the application..
+
+D:\MyDevelopment\Angular11\Feb-6AM\MyFirstApp...
+
+> ng new MyFirstApp  --> ng new <nameOfApplication>
+	Would you like to add Angular routing? (y/N) : Y
+	Which style sheet format ?: CSS
+
+Execute the App --> ng serve(or) ng s (or) ng serve --open(or) ng s -o
+> ng s -o -> we use this option often..
+
+2-16-2021:			
+===========
+How to open the project in visual studio code?
+----------------------------------------------------
+Open command prompt.
+cd D:\MyDevelopment\Angular11\Feb-6AM\MyFirstApp>code .
+
+### Folder Structure:
+------------------------
+D:\MyDevelopment\Angular11\Feb-6AM\MyFirstApp\e2e
+
+e2e(end to end Testing) ->
+It keep track of application things, how your application is getting executed.
+Its kind of log information..
+	how much time it interacted with components..
+	what all the links are visited
+	what all the links not visited.
+
+node_modules -> this is the main folder.. contains complete list of packages.. 
+				which are required for your project to build the application.
+				any 3rd party packages also we can install.. Ex: bootstrap package..
+				
+*** we can download everything from NPM.
+
+To install the bootstrap?
+-------------------------
+https://www.npmjs.com/package/bootstrap
+npm i bootstrap
+
+Run this command when project does not contains "node_modules" folder ?
+--------------------------------------------------------------------------
+> npm install.
+and then run the application..
+
+src/app folder --> this is the place where we write our source code w.r.t appln development
+
+assets -- to maintain static files..
+
+environments -> there will be 2 files inside this folder..same appln u running in DEV, SIT, Prod environment..
+	All the development/production configuration will be done here..
+	environment.prod.ts
+	environment.ts
+	
+favicon --> faviorite icon
+
+index.html --> this is landing page.. this is where appln is landing.. from here only appln execution starts..
+				from ui point of view this is main file
+
+main.ts --> is like our main menu..once if you run appln .. bootstrap the app modules.
+			from code point of view.. this is main file
+			
+polyfills.ts --> any browser compatability things.. 
+
+style.css file -> 
+
+test.ts --> this is for global unit test cases..
+
+angular.json --> conatins angular configurations...we have to define globally
+	
+package-lock.json --> not required this.. any 3rd part packages will track..
+	
+karma.conf.js --> 
+
+package.json --> contains all the information which is related to packages which are used for project..to run the appln.
+				what all the dependencies are required it will download.
+				
+2-17-2021:			
+===========
+Add the below extensions in Visual studio:
+-------------------------------------------
+Angular Snippets (Version 11)
+HTML CSS Support
+open in browser
+Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
+
+### Which Javascript version you using?
+------------------------------------
+ECMAScript latest version - ES6
+JS is not having any version numbers..
+
+### Which version of HTML you using ?
+-----------------------------------
+HTML5
+
+### which version of CSS you using ?
+--------------------------------------
+CSS3
+
+### which version of Angular you using ?
+-----------------------------------------
+Angular11
+
+2-18-2021:			
+===========
+
+
+2-19-2021:			
+===========
+			
+
+2-21-2021:			
+===========
+
+DOM - Document Object Model.
+----------------------------
+For every HTML element at runtime, browser it creates an Object
+Collection of Objects which are created for every HTML element.
+
+innerText: will be used to append some context to the HTML elements at runtime, 
+           but innerText property will not identify HTML tags in the content.
+
+innerHTML:- will be used to append some context to the HTML elements at runtime, 
+            but innerHTML property will identify the HTML tags which are presented in the content.
+
+Javascript Objects:
+- Object
+- string
+- number
+- array
+- json
+
+Keyboard Events:
+	whenever you type any data I want to display something text in lower case or uppercase.
+	
+2-28-2021:			
+===========
+Typescript:
+
+example1.ts
+	function Test() {
+		var marks = 33;
+
+		var result = "pass";
+		if (marks < 35) {
+			var result = "fail";
+			console.log('Inside the block ' + result);
+		}
+		console.log('Outside of the block ' + result);
+	};
+
+example2.ts
+-------------
+//enumeration
+enum Result { Pass = 1, Fail = -1, Promoted = 0 }
+
+function Student() {
+
+    //members
+    let studentId: number = 101;
+    let studentName: string = "Shrikanth";
+    let isActive: boolean = true;
+
+    //Array declaration
+    let marks: Array<number> = [45, 67, 89];
+    let total = 0;
+
+    for (let i of marks) {
+        total += i;
+    }
+
+    let average: number = total / 3.0;
+
+    //creating array in different way
+    var courses: string[] = ["HTML", "CSS", "Javascript", "JQuery", "ANgular"];
+    //tuple
+    let dateOfBirth: [number, string, number] = [22, "Jul", 19889];
+
+    //using enumeration
+    let result: Result = Result.Pass;
+
+    //function with expression
+    this.result = function () {
+        if (average >= 35) {
+            return Result.Pass;
+        } else {
+            return Result.Fail;
+        }
+    }
+}
+
+example3.ts:
+-------------
+var courses: string[] = ["HTML", "CSS", "Javascript", "JQuery", "ANgular"];
+
+//Normal for loop
+for (var i = 0; i < courses.length; i++) {
+    console.log(courses[i]);
+}
+
+//for each loop ..exeucting another function..
+//function without having any name we call callback function.
+courses.forEach(function (val, index) {
+    console.log(index + "   " + val);
+
+})
+
+//for..in ... is used to print only index values..to iterate index we use this loop..
+for (let x in courses) {
+    console.log(x);
+}
+
+//for..of: Index .. to get the values from collection.
+for (let x of courses) {
+    console.log(x);
+}
+
+3-01-2021:			
+===========
+Class:
+- It is a collection of data members and member functions.
+    data members - to strore the data
+    member functions - to write business logic
+- Object: An Object is an instance of class.
+    Physical existence of object.
+- OOPS is providing two features    
+    - security
+    - Reusability
+- Any PL, if it is an OOPS it should follow 4 principles
+    - Encapsualtion: Binding everything in class ( writing everything inside a class)
+    - Abstraction: Hiding the implementation and provide security
+    - Poly Morphsim: One to many behaviors
+    - Inheritance: Acquiring the properties from one to another.
+
+example4.ts	file:
+class Customer {
+
+    //data members/properties
+    customerId: number;
+    customerName: string;
+    customerBal: number;
+
+
+    //To initialize with data for class members then we use constructor.
+    //It is a special method which will invoke when the object of the class is created. automatically constructor will be called.
+    //we can have only one constructor in Typescript.
+    constructor(custId: number, custName: string, custBal: number) {
+        //this - is an object of current class
+        this.customerId = custId;
+        this.customerName = custName;
+        this.customerBal = custBal;
+    }
+
+    //Function - returns a value //Method - It contains return type as void
+    Display() {
+
+        var message: string = 'Customer ID is: ' + this.customerId
+            + " Customer Name is: " + this.customerName
+            + ' Customer Balance is: ' + this.customerBal;
+        console.log(message);
+    }
+
+}
+
+//Object creation // we can use var or let keyword.
+//synatx: objectName: className = new ConstructorName();
+var cust1: Customer = new Customer(101, 'Srikanth', 15200);
+//Accessing the members OR calling methods
+cust1.Display();
+
+let cust2: Customer = new Customer(102, 'Diyansh', 25632);
+cust2.Display();
+
+How to compile and run ?
+> D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>tsc example4.ts
+
+> D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>node example4.js
+	Customer ID is: 101 Customer Name is: Srikanth Customer Balance is: 15200
+	Customer ID is: 102 Customer Name is: Diyansh Customer Balance is: 25632
+
+3-3-2021:
+----------
+Inheritance:
+- It is a process of acquiring the properties form one class to another class.
+- In TS also we have all different tyoes of Inheritance.
+    - Single Inheritance: Single Base class + Single Derived class
+    - Multi Level: Different level of classes
+    - Heirarichal: Single Parent class + Multiple child classes.
+    - Multiple: Multiple parents + Single Child
+    - Hybrid: combination of any two
+- The gives which gives properties is called Parent/Base/Super class.
+- The class which acquire the properties is called Child/Derived/Sub class
+- In TS to provide the inheritance between the classes we use "extends"
+- Once if parent class is having constructor, in child class we must call it.
+
+- We always create the Object for child classes not to Base class/Parent class.
+
+Constructors for derived classes must contain a 'super' call
+super - keyword used to call the parent class constructor.
+
+//Single level Inheritance.. example:
+//single parent
+class Employee {
+
+    protected EmpId: number; //for data members we follow camel cases
+    protected Name: string;
+    protected BasicSalary: number;
+
+    constructor(id: number, name: string, salary: number) { //for parameters we follow lower case
+        this.EmpId = id;
+        this.Name = name;
+        this.BasicSalary = salary;
+    }
+
+    Display() {
+        console.log('Employee Id: ' + this.EmpId + ", Name: " + this.Name + " and Basic Salaru: " + this.BasicSalary);
+    }
+}
+
+//single child
+class Trainer extends Employee {
+
+    protected Subject: string;
+
+    constructor(id: number, name: string, salary: number, subject: string) {
+        super(id, name, salary);
+        this.Subject = subject;
+    }
+
+    Display() {
+        //console.log('Employee Id: ' + this.EmpId + ", Name: " + this.Name + " and Basic Salaru: " + this.BasicSalary + " and Subject is: " + this.Subject);
+        super.Display();
+        console.log('Subject is: ' + this.Subject);
+    }
+}
+
+var emp: Employee = new Employee(101, 'Raju', 12345);
+emp.Display();
+
+var trainer: Trainer = new Trainer(102, 'Srikanth', 12345, 'Angular');
+trainer.Display();
+
+Abstract Class:
+-----------------
+Abstract class and Methods:
+- A class for which we have an incomplete functionality, which may be provided in child classes.
+- A class which contains atleast one abstract function.
+- Abstract function is having only declaration and not the implementation.
+- Abstract classes should not be instantiated using new keyword. Cannot create an instance of an abstract class.
+- Abstract methods from abstract class we must provide implementation in child class.
+
+abstract class Employee1 {
+
+    protected EmpId: number;
+    protected Name: string;
+    protected BasicSalary: number;
+
+    constructor(id: number, name: string, salary: number) {
+        this.EmpId = id;
+        this.Name = name;
+        this.BasicSalary = salary;
+    }
+
+    abstract calculateSalary(hours: number): void;
+
+    Display() {
+        console.log('Employee Id: ' + this.EmpId + ", Name: " + this.Name + " and Basic Salaru: " + this.BasicSalary);
+    }
+}
+
+class Lecturer extends Employee1 {
+
+    protected Subject: string;
+
+    calculateSalary(hours: number): void {
+        let salary: number;
+        salary = this.BasicSalary + hours + (this.BasicSalary * hours) * 2.5 / 100;
+        console.log('Lecturer Salary: ' + salary);
+        //throw new Error("Method not implemented.");
+    }
+
+    constructor(id: number, name: string, salary: number, subject: string) {
+        super(id, name, salary);
+        this.Subject = subject;
+    }
+
+    Display() {
+        super.Display();
+        console.log('Subject is: ' + this.Subject);
+    }
+
+}
+
+let emp1: Employee1;
+emp1 = new Lecturer(101, 'Srikanth', 12345, 'Angular');
+emp1.calculateSalary(8);
+emp1.Display();
+
+//To test code:
+//tsc example8.ts;
+//node example.js
+
+Hierarchical Inheritance:
+----------------------------
+Single Parent class + Multiple child classes.
+
+
+Abstract class and Methods:
+---------------------------
+- A class for which we have an incomplete functionality, which may be provided in child classes.
+- A class which contains atleast one abstract function.
+- Abstract function is having only declaration and not the implementation.
+- Abstract classes should not be instantiated using new keyword. Cannot create an instance of an abstract class.
+- Abstract methods from abstract class we must provide implementation in child class.
+
+Interfaces:
+-------------
+- contains only abstract methods. contains only definitions and does not contain any implementation.
+- It is a contract between itself and it's derived class. The contract is interface provides definitions and derived class must provide implementations.
+- To create we use "interface" keyword.
+- By default everything is "public abstract"
+- we use "implements" keyword
+
+export/import:
+---------------
+- Once you specify export, we can import any where.
+
+example9.ts:
+	export interface iArithmetic {
+
+		Add(x: number, y: number): number;
+		subtract(x: number, y: number): number;
+
+	}
+
+	export class Arthmetic implements iArithmetic {
+
+		Add(x: number, y: number): number {
+			return x + y;
+		}
+
+		subtract(x: number, y: number): number {
+			return x - y;
+		}
+	}
+
+example10.ts:
+	import { Arthmetic, iArithmetic } from "./example9";
+
+	let obj: iArithmetic = new Arthmetic();
+	console.log(obj.Add(100, 200));
+	console.log(obj.subtract(100, 50));
+	
+** Generics also not supported in typescript. but we will use it.	
+
+3-7-2021:  ( Angular session starts here..)
+----------
+To startup Angular:   Below is the environment setup:
+-------------------------------------------------------
+1. NodeJS must be installed
+	> node -v
+2. NPM is required. NPM will be downloaded automatically once NodeJS is installed.
+	> npm -v
+3. TypeScript must be installed
+	> npm install -g typescript
+	> tsc -v
+4. Angular CLI must be installed
+	> npm install -g @angular/cli
+	> ng version
+
+Update the angular older version to Angular11:
+-----------------------------------------------
+1. Uninstall Angular CLI.
+	> npm uninstall -g @angular/cli
+2. Clear the cache
+	> npm cache clear --force
+	> npm cache verify
+3. Restart the computer
+4. Install the latest Angular CLI
+	> npm install -g @angular/cli@latest	
+		
+How to update node Js I mean angular js version ?
+-------------------------------------------------	
+> Just download NodeJS latest version normal way from https://nodejs.org/en/download/
+	
+### Main Building Blocks of Angular?
+---------------------------------------
+https://angular.io/guide/architecture
+
+1. Component  
+2. Template
+3. Date Binding
+4. Directives
+5. Services
+6. Dependency Injection
+7. Pipes
+8. Routing
+9. Modules
+
+1. Component is nothing but a typescript class which is used to maintain the state of the component.
+	Component is having :
+		ts file - is having business logic
+		template
+		
+2. Template is nothing but HTML to display the data to the user.
+	Component and Template both are inter related to each other.
+	Every component will have Template.
+	
+3. Date Binding is a mechanism which will be used to share the data from component to template and vice versa.
+
+4. Directives - are used in the template to manipulate the DOM.
+
+5. Services - is a reusable code which used to get the data from the servers and share it to components.
+
+6. Dependency Injection - It is a Design pattern used to Inject the data from service to component class.
+
+7. Pipes - used to transform the data before it displays in the template.
+
+8. Routing - it is a concept of page navigation. To Navigate from one page to another page within appln.
+			 whenver you want to develop Single Page Appln we should go for routing mechanism.
+
+9. Modules - which improves the Modularity. grouping of related items belongs to same kind of functionality.
+			 Ex: To build the appln, first Identify the modules. 
+					based on the business we identify modules - Student, Trainer, Admin
+			 By default we get AppComponent, AppModule
+
+### How services and component communication happen ?
+-------------------------------------------------------
+> using Dependency Injection
+
+### What is Metadata ?
+------------------------
+*** Metadata will contain information about component.
+Ex: app.component.ts 
+	@Component({
+	  selector: 'app-root',
+	  templateUrl: './app.component.html',
+	  styleUrls: ['./app.component.css']
+	})
+
+*** Filters are used to process the data.
+
+3-8-2021: 
+----------
+
+To create a new Application?
+-------------------------------
+D:\MyDevelopment\Angular11\Feb-6AM>ng new ComponentsDemo
+? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?
+  This setting helps improve maintainability and catch bugs ahead of time.
+  For more information, see https://angular.io/strict Yes
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? (Use arrow keys)
+> CSS
+  SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]
+  Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]
+  Less   [ http://lesscss.org                                             ]
+  Stylus [ https://stylus-lang.com    
+                                    ]
+									
+Building Blocks:
+-----------------
+1. Component
+2. Template
+3. Date Binding
+4. Directives
+5. Services
+6. Dependency Injection - is a kind of design pattern.
+7. Pipes
+8. Routing
+9. Modules
+
+- Every Angular element is having 3 parts:
+	- import statements  -- it is used to import/get the core packages.
+	- decorator   -- is used to write the metadata.
+	- export class  -- is used to export/send the functionality.
+- Decorator is used to differentiate the angular elements from one to another.
+
+Components:
+- A Component is main building block of angular, and angular was completely implemented with the help of Components.
+- A Component is a reusable UI, which contains state of the page.( contains data of page and few additional functionality )
+- A Component is a typescript class which was created with the help of @Component() decorator.
+
+### Data Binding mechanism:
+-----------------------------
+One way binding:- Interpolation, property binding, Event binding
+Interpolation : can we written with {{}}  is one of the mechanism which used for data binding .. is used to get the data from component to template.
+property binding: can we written with []
+Event binding: can we written with ()
+two way binding: [()]
+
+Execution of Angular:
+--------------------------
+first request will go to main.ts ==> AppModule.ts  ==> AppComponent.ts ==> Selector ==> index.html
+
+- main.ts file => first file execution starts
+					Bootstrap/Initializing the AppModule
+Inside AppModule.ts  	
+					Bootstrap/Initializing the AppComponent
+					
+					
+selector which is used to instatiate the component.					
+
+
+how to change my angular port number?
+--------------------------------------
+
+

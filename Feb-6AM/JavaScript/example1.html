@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       <h1>Login Page</h1>
+       <div>
+           <label for="uname">Enter Username: </label>
+           <input type="text" name="uname" id= "uname">
+           <br>
+           <label for="pwd">Enter Passpord: </label>
+           <input type="password" name="pwd" id= "pwd">
+           <br>
+           <input type="button" onclick="Login()" value="Login">
+       </div>
+       <div id="div1"></div>
+
+       <script>
+            function Login(){
+                //console.log('Button clicked')
+                var uname = document.getElementById('uname').value; //it will get entire reference..
+                var uname = document.getElementById('pwd').value;
+                var resObj = document.getElementById('div1');
+
+                if(uname == "admin" && pwd == "admin"){
+                    //console.log('Login Success');
+                    //resObj.value = "Login Success";
+                    resObj.style.color = "Green";
+                    resObj.innerHTML = "<b>Login Success<b>";
+
+                } else{
+                   // console.log('Invalid Credentials');
+                    resObj.style.color = "Red";
+                    resObj.innerHTML = "<b>Invalid Credentials<b>";
+                }
+                console.log(uname);
+                //console.dir(uname);
+            }
+       </script>
+    </body>
+</html>

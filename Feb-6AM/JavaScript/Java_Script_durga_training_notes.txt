@@ -1,0 +1,1439 @@
+Java Script:
+=============
+HTML meant for Nouns.
+Component Names ==> button, navbar, jumbotron, input ==> are Nouns
+
+Adjectives --> are nothing but description
+Style html nouns ==> Adjectives.
+CSS meant for Adjectives.
+
+Actions/Verbs ==> Java Script
+
+** HTML means Nouns
+** CSS means Adjectives
+** JS means Verbs
+
+** JS meant for Front-End to define actions
+** Django/Python for Back-End
+** NodeJS is for Backend
+
+*** Full Stack Web development:
+HTML+CSS+....Front-end
+any tech --> Backend
+
+*** Mean Stack web development: means always technology fixed..
+M - MongoDB
+e - Express JS
+a - Angular JS
+n - NodeJS
+
+IDE tools:
+	Visual Studio Code
+	Atom
+	IntelliJ IDE
+
+---------------------------------------------------------------------
+
+### difference between Java Vs JavaScript ?
+-----------------------------------------------
+Java is an object oriented programming language...	JavaScript is an object based scripting language.
+Java supports multithreading...	Javascript doesn’t support multi-threading.
+Java program uses more memory...	JavaScript requires less memory therefore it is used in web pages.
+JavaScript code used to run only in browser, but now it can run on server via Node.js.
+
+### What is JavaScript ?
+----------------------------
+JavaScript is:
+	leightweight -- means its easy to implement
+	interpreted language - there is No compilation step
+	object oriented - means use objects to model your application.
+	first-class functions -> mean function can be used as a value and assign to a variable.
+	scripting language - writing instructions for runtime environment.
+-> JavaScript runs on a Web browser. In a web browser we have html, css and js and then browser renders the html and runs javascript.
+
+*** To add functionality/action to our HTML components -- happily we can go for Java Script
+	If you want dynamic content in nature then we use JS.. 
+	To do some action we required JS
+*** To add functionality(Validation purpose) to the HTML to generate dynamic content you need Java Script.
+
+Ex: I want to display
+Hello End Users Good Morning  -- This is static content
+Hello <username> Good Morning!!!  --> This is dynami content
+
+var name = prompt("Hello Enter Your Name:");
+
+### What is DOM: ( Document Object Model) 
+--------------------------------------------
+-> taking the HTML document and creating the Object model out of it.
+-> From Java Script if you want to communicate with HTML or CSS in the middle some concept is required that is DOM..
+	Document - is nothing but HTML
+	Object - is nothing but Java Script
+
+In the Runtime environment, when you have a web browser and you making a call to a website ( typing a url on web browser )
+browser makes a request to the server and hey server give me this page.
+server responds with some html content and html contains bunch of tags this is String.
+browser reads and examine those tags - html, body, div, paragraph tag and takes all those tags and converts them into Object.
+Each tag consider as Object. constructs a tree Objects.
+tree Object is referred as DOM tree.
+if we change DOM tree, your View also changes makes sync.
+
+Why learn JS ?
+---------------
+Client side web development:
+	Native Javascript
+	jQuery
+	Angular JS, React, Ember
+	
+Server side web development:
+	NodeJS
+	Express
+
+1. JavaScript Developer's Console:
+-----------------------------------
+if you want to test small small pieces of snippet coding then we use this console.
+Open the browser window --> Righ Click --> Inspect --> Console
+shortcut ==> CTRL+SHIFT+j
+
+*** CTRL+L --> To clear the console --> clear() command 
+semicolon(;) is optional.. not required to use..
+
+The 5 basic java script primitive data types:
+----------------------------------------------
+1. number
+2. string
+3. boolean
+4. undefined
+5. null
+
+1. Number:
+-----------
+number -- is datatype
+10
+10.5 
+JS never cares about which type of number it is whether Integral or floating point number or positive number or negative number. 
+It is only of "number" type.
+var x=10
+type of x
+typeof 10
+typeof 10.5
+number
+
+typeof --> what type of operator/object is
+
+2. string:
+------------
+any sequence of characters.. we should use doublequotes "" only. singlequotes '' also valid..
+name="durga"
+name='durga'
+
++ operator for strings also ( acts as concatenation)
+'durga'+'soft'==> durgasoft
+'durga'+10 ==-> durga10
+
+*** we are allowed to use escape characters
+'durga\nsoft'
+
+*** string.length ==> how many characters are present in string
+'durga'.length --> 5
+
+*** How you can able to access characters of string
+using index
+'durga'[0] -- d
+'durga'[4] -- a
+'durga'[100] -- If you try to access string element with outof range .. result will always be undefined value...
+
+3. boolean:
+------------
+Logical values - true or false.. only these 2 things are allowed
+true
+false
+
+JS Variables:
+-------------
+*** How to declare variable in JS, To hold value:
+> var variablename=variablevalue
+var name='Durga'
+var age=60
+var isMarried=false
+var name="durga"
+var x=10
+
+without var also you can able to take.
+
+studentMobileNumber==> camel case convention ( strats with lower case, every inner word starts with uppercase)
+Java, JS uses  camel case convention.
+student_mobile_number==> snake case convention ( Python uses)
+student-mobile-number==> Lisp programming uses this type of style
+
+null and undefined:
+---------------------
+null ==> means nothing.. variable not pointing to any object.
+undefined ==> variable but value not at assigned. That function is not going to return anything..
+	var x ==> declaring a variable but no value assigned such type is called undefined
+
+	var currentPlayer="durga"
+	currentPlayer=null //game is over
+
+why undefined is coming everytime ?
+-------------------------------------
+function f1(){
+	return 10;
+}
+-- when u declare above function it prints undefined..
+-- when I call this function it returns 10.
+f1()
+-> 10
+
+var x=10; It is not going to return anything..
+--> developer console is going to print - undefined
+
+JS developer console it has to print something for everyline, if it is not going to return anything then it prints undefined.
+Being a developer not required to worry..
+
+The 3 mostly common used methods/functions of java script:
+-------------------------------------------------
+1. alert()
+2. console.log()
+3. prompt()
+
+1. alert():
+------------
+To display alert message to the end user. Alerting to end user
+
+alert("Just concentrate on lesson!!!")
+alert(10+20)
+
+2. console.log()
+----------------
+To print some message/data to the developer console.
+console.log("Hello this data will be printed to the console")
+console.log(10*20)
+-> 200
+
+3. prompt()
+-----------
+Prompt user to provide some input data. To read data from enduser.
+
+var name=prompt('Enter your Name:')
+console.log("Hello "+name+" Good Evening!!!")
+alert("Hello "+name+" Good Evening!!!")
+
+Pass by value vs Pass by reference:
+===================================
+*** javascript is always a pass by value
+** In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
+
+Pass by value: Passing a copy of the value, not the original
+		reference.
+		
+Pass by reference: Passsing the address of the object, so that
+		you can access the original object.
+
+-----------------------------------------------------------------------
+In reality,no one is going to write code in developer's console.
+JS code we write inside the separate file ( demo.js)
+we have to connect this javascript file to HTML.
+
+How to connect JS file inside HTML :
+------------------------------------------
+link tag for CSS file
+using <script> tag
+<script type="text/javascript" src="demo.js"></script>
+
+Inside HTML where you will take ?
+	link tag we take inside <head> tag
+	<script> tag we can place anywhere.. Inside <head> part or Inside <body> part.
+
+*** Is there any difference if you take Inside <head> part or Inside <body> part?
+	If you are defining inside <head> part:
+	first Javascript code will be executed and 
+	after that HTML body will be displayed to the enduser.
+
+	If you are taking inside <body> part:
+	with body, javascript code will be executed.
+	first body will be displayed and 
+	after that Javascript code will be executed..
+
+Operators:
+------------
+1. Arithmetic operators:
+-------------------------
++, -, *, /, %, ** 
+(** means power operator)
+
+2. Comparison Operators:
+-------------------------
+<, <=, >, >=, ==, !=, 
+===, !==
+
+==   ---> Equality operator ( double equal)
+===  ---> strictly equality operator ( thriple equal)
+
+10=="10"  ===> only content will be compared but not type.. double equality operator never talks about type.
+--> answer is true.. only content comparision..
+
+we have to compare both content and type then we use strictly equality operator..
+	10 === "10"  --> It will return false..
+	10 === 10 --> return true
+	type must be matched and content must be matched -- then only strictly equality operator returns true.
+
+===  ==> is recommended if you use typesafety.
+==   ===> if you not using typesafety.
+
+true == "1"  ---> returns true  ( Internally true treated as 1 , false treated as 0)
+true === "1"  ---> returns false
+
+false == "0"  --> return true
+false === "0"  --> return false
+
+null
+undefined
+NaN  --> Not a Number
+
+null===undefined  --> return false ( Internally null means nothing, undefined mean nothing)
+null==undefined  --> return true
+null==NaN --> return false
+
+NaN:
+----
+If you compare with for any X value including NaN
+
+x<NaN
+x<=NaN
+x>NaN
+x>=NaN
+x==NaN
+In all above cases always it returns false..
+
+NaN comparision is defined internally..
+
+x != NaN  --> returns true only in this case..
+NaN == NaN --> return false
+NaN != NaN --> return true
+
+Logical Operators:
+-------------------
+&&
+||
+!
+
+x && y  ==> AND - If both arguments are returns true then automatically returns true.
+x || y  ==> OR  -- Atleast one argument is true then returns true.
+!x ==> whenever x is false then it returns true; If x is true then it returns false.. (reverse complement)
+
+true && false  --> returns false
+true || false --> returns true
+!false   -->  returns false ( negation of true -- is false; negation of false -- is true)
+
+1. 0 value is always treated as false
+   non-zero value always treated as true
+   1 && 1 --> returns true
+
+2. empty '' string is treated as false
+!'' -- negation of empty string is true.
+
+3. null, undefined, NaN are treated as false only.
+
+1 && 1 ==> returns 1 
+
+Conditional Statements/Selection:
+---------------------------------
+if
+if-else
+	
+if(b - boolean condition){
+	action if b is true
+} else{
+	action if b is false
+}
+
+1. write a JS code to check whether the given number is even or not
+
+	var num=prompt("Enter any number to check:")
+	//var num=Number(prompt("Enter any number to check:"))
+	alert(typeof num)
+	if(num %2==0){
+	  alert("Given Number is Even !!!")
+	} else {
+	  alert("Given Number is not Even !!!")
+	}
+
+2. read age from the enduser
+age < 18
+age > 60
+
+var age=Number(prompt("Enter Your Age:"))
+alert(typeof age)
+if(age > 60){
+  alert("Please wait some more time definetly you will get best match !!!")
+} else if(age < 18) {
+  alert("Your Age is already crossed marriage age ... No chance of getting marriage !!!")
+} else{
+  alert("Thanks for registration you will get match details by email !!!")
+}
+
+var brand=Number(prompt("Enter Your Favourite Brand:"))
+alert(typeof age)
+if(brand=="KF"){
+  alert("It is childrens brand !!!")
+}
+else if(brand=="KO") {
+  alert("It is too light")
+}
+else if(brand=="RC") {
+  alert("It is not that much kick !!!")
+}
+else if(brand=="FO") {
+  alert("Buy one get one Free")
+}
+else {
+  alert("Other brands are not recommended")
+}
+
+true == !"2" --> return false
+
+Iterative statements/Loop:
+---------------------------
+If you want to execute group of statements multiple times -- go for Loop statements.
+DRY Principle: Dont Repeat Yourself
+
+console.log("Hello")
+console.log("Hello")
+console.log("Hello")
+---
+--
+50 times want to display
+
+for( 50){
+	console.log("Hello")
+}
+
+1. while
+2. for
+	-- forEach()
+	-- for-in
+	-- for-of
+
+In JS switch statemet is avilable or not ? -- In Python switch statement is not available 
+yes
+In JS do-while loop is avilable or not ?   -- In Python do-while is not available 
+yes
+
+Number function - type cast function .. to convert from string to number
+
+1. while
+----------
+If you dont know number of iterations in advance.. As longs as some condition is true keep on execute some code then
+we go for while loop.
+
+while(condition){
+	body
+}
+
+1. To print Hello 10 times
+	var count=1
+	while(count<=10){
+	  console.log("Hello "+count)
+	  count++
+	}
+
+2. To print each character present inside a string
+	var str=prompt("Enter some word:")
+	var i=0
+	while(i<str.length){
+	  console.log(str[i]);
+	  i++
+	}
+
+3. To print all numbers divisble by 3 and 5 between 5 to 100
+	var n=5
+	while(n<100){
+	  if(n%3==0 && n%5==0){
+		console.log(n);
+	  }
+	  n++
+	}
+
+4. This loop keep on executing untill you entered valid condition is true.. 
+	var name=promp("Enter Your Favourite Actress:")
+	while(name != "Sunny"){
+	  name=promp("Enter Your Favourite Actress:")
+	}
+	console.log("Thanks for Right Confirmation !!!");
+
+
+for loop:
+---------
+There are 4 types:
+1. general for loop
+2. forEach()  -- Applicable for Arrays concept
+3. for-of loop -- Applicable for Arrays concept
+4. for-in loop  -- Applicable for objects concept
+
+1. general for loop
+--------------------
+syntax:
+for (Initialization check; conditional check; increment/decrement part) {
+  body
+}
+
+First Initialization section going to be executed
+After that It checks Is conditional check is true or not
+If the conditional check is true then automatically body will be exuected
+After executing body, now increment/decrement section is going to execute
+After that again conditional check, If the conditional check is satisfied then again body
+
+for (var i = 0; i < 10; i++) {
+  alert[i]
+}
+
+To print Hello 10 times to the console.
+for(var i=0; i<10; i++){
+	console.log("Hello")
+
+--> 10 Hello
+for(var i=0; i<10; i++){
+	console.log("Hello: "+i)
+}  
+--> It prints Hello 0, Hello 1 .... Hello 10
+If content changed, then it will print
+
+*** To print all numbers which are divisble by 7 from 1 to 100:
+	for(var i=1; i<=100; i++){
+		if(i%7==0){
+			console.log(i);
+		}
+	}
+
+while vs for:
+--------------
+If we know number of iterations in advance ---> then we go for loop ( Exactly 10 times or 20 times)
+If we dont know number of iterations in advance and As long as some condition is true then execute loop body --> then we go while loop..
+
+
+Secret Agent Application:
+--------------------------
+Rules:
+1. The first character of the name should be 'd'
+2. The Last character of Favourite actor should be 'r'
+3. The lucky number should be 7
+4. The length of the dish should be >=6
+
+var name=prompt('Enter Your Name:')
+var actor=prompt('Enter Your Favourite Actor:')
+var lucky=prompt('Enter Your LuckyNumber:')
+var dish=prompt('Enter Your Favourite Dish:')
+
+var nameCondition=false //assume nameCondition is not satisfied.. by defualt not satisfied
+var actorCondition=false
+var luckyCondition=false
+var dishCondition=false
+
+if(nam[0]=='d'){
+	nameCondition = true
+}
+if(actor[actor.length-1]=='r'){
+	actorCondition = true;
+}
+if(lucky==7){
+	luckyCondition = true;
+}
+if(dish.length>=6){
+	dishCondition = true;
+}
+alert("Hello: "+name+"\n Thanks for Providing Information")
+
+if(nameCondition && actorCondition && luckyCondition && dishCondition ){
+	console.log("Hello Secret Agent..Next Operation is ");
+	console.log("We have to kill atleast 10 sleeping students in the class room because these are burden to the country");
+}
+
+Functions:
+-----------
+write only once and call function any number of times.
+code reusability concept only.
+
+How to declare function in JS:
+--------------------------------
+function function_name(arguments){
+	body..
+}
+function function_name(arguments){
+	body..
+	return value;
+}
+return type is optional... arguments is also optional..
+
+
+To Print Good Evening
+function greeting(){
+	console.log("Hello Good Evening")
+}
+To call function:
+------------------
+greeting()
+
+functions with arguments:
+--------------------------
+function greeting(name){
+	console.log("Hello "+name+" Good Evening");
+}
+var name=prompt('Enter Your name')
+greeting(name)
+
+name is variable.. dont think about type and so on..
+In JS we are not required to specify type..
+based on user provided input value automatically type by value is considered..
+
+default arguments story is applicable for functions:
+-----------------------------------------------------
+function greeting(name='Guest'){
+	console.log("Hello "+name+" Good Evening");
+}
+var name=prompt('Enter Your name')
+greeting()
+
+Function with return values:
+-----------------------------
+A function can return only one value in Java/JS.
+
+-----------
+function squareIt(number){
+	return number*number;
+}
+var result=squareIt(4)
+console.log('The Square of 4 is: '+result);
+console.log('The Square of 5 is: '+squareIt(5));
+
+-----------
+function sum(number1, number2){
+	return number1+number2;
+}
+console.log('The sum of 10 and 20 is: '+sum(10,20));
+console.log('The sum of 100 and 200 is: '+sum(100,200));
+
+keyword arguments are also accepting:
+console.log('The sum of 100 and 200 is: '+sum(number1=200,number2=500)); --> 700
+-----------
+
+2. Write JS function to take string as argument and return capitalized string:
+capitalized string --> only first character should be capital and remaining will be normal..
+	Ex: sunny --> Sunny
+
+	function capitalize(str){
+		return str[0].toUpperCase()+str.slice(1);
+	}
+	console.log(capitalize('durga'));
+	console.log(capitalize('bunny'));
+
+	There is slice concept in string..
+	str.slice(1);  --> from 1 first index onwards please consider as it is ( Ex: urga)
+	str[0] --> 0th index first character only convert to uppercase. ( Ex: d)
+
+
+3. Write a JS function to check the given number is Even or Not:
+	function isEven(num){
+		if(num%2==0){
+			return true
+		}
+		return false
+	}
+	console.log(isEven(10));  --> true
+	console.log(isEven(15));  --> false
+
+4. Write JS function To find factorial of given number
+	computed as the product of all positive integers between 1 and n ( Or less than or equal to n.)
+	Note: The factorial of 0 is 1.
+	For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+	
+	function factorialize(num) {
+	  if (num < 0) 
+			return -1;
+	  else if (num == 0) 
+		  return 1;
+	  else {
+		  return (num * factorialize(num - 1));
+	  }
+	}
+	factorialize(5);
+5. Write JS function To convert from snakeCase to KebabCase
+
+-------------------------------
+JS Session - 5:
+---------------
+5. Write JS function To convert from snakeCase to KebabCase
+	Snake case: total_number --> words separated with underscore "_" symbol.
+	KebabCase: total-number -->  words with hypen "-" symbol
+
+	//replace underscore with hypen symbol..
+	function snakeToKebab(str){
+		var newString=str.replace('_','-');
+		return newString;
+	}
+	console.log(snakeToKebab('total_number'));
+	console.log(snakeToKebab('mobile_number_of_student')); --> mobile-number_of_student
+
+Is this function valid or not ?
+---------------------------------
+function square(n){
+	return n*n;
+	console.log("Function completed");
+}
+The statements are not going to be executed after the return statement. It will not give any error.
+
+Java Script Scopes:
+--------------------
+1. Global Scope
+2. Local Scope
+
+The variables which are declared outside of function are called Global variables or the variables having global scope..
+These variables can be accessed by all functions.
+
+var x=10
+function f1(){
+	console.log(x);
+}
+function f2(){
+	console.log(x);
+}
+f1() --> it returns 10
+f2() --> it returns 10
+
+The variables which are declared inside a function are called Local variables scope.
+Local variables always gets highest priority when compared with global variables.
+var x=10
+function f1(){
+	console.log(x);
+	var y=20;
+	console.log(y);
+}
+function f2(){
+	console.log(x);
+	console.log(y); --> This you cannot access.
+}
+
+Higher Order functions:
+------------------------
+I have one function is there ,you can pass another function as an argument.
+Ex: f1(f2)
+
+setInterval(functionName,3000){  --> automatically This function will be executed for every 3000 mili seconds.
+	
+}
+It takes another function as an argument.
+executes Infinite loop every 3000 mili seocnds
+setInterval() -- for every specified amount of interval it keep on executing this function.
+
+---------
+function singASong(){
+	console.log("Rangamman...Mangamma...");
+	console.log("Jil...Jil...Jigel..Rani..")
+}
+
+This function I want to call repeatedly..
+setInterval(singASong,4000)  --> For every 4 seconds this function keep on calling...
+1
+---------
+
+To stop this function..
+clearInterval(1)
+
+
+Anonymous Function:
+--------------------
+We can declare a function without name.
+nameless functions are called - anonymous function
+just for instant use (one time use)..
+
+if you want to call multiple times -- name must be required
+
+setInterval(function (){
+		console.log('Anonymous Function')
+	}, 3000)
+4
+
+To stop this function..
+clearInterval(4)
+
+function isSleeping(workingday, vacation){
+	return !workingday || vacation  //If it is not workingday or vacation return true Else return false
+}
+console.log('Is Employee sleeping: '+isSleeping(true,true)); //true
+console.log('Is Employee sleeping: '+isSleeping(true,false)); //false
+console.log('Is Employee sleeping: '+isSleeping(false,true)); //true
+console.log('Is Employee sleeping: '+isSleeping(false,false)); //true
+
+true, false ==> false
+false, true ==> true
+
+Ex:
+function monkeyTrouble(aSmile, bSmile){
+	return (aSmile && bSmile) || (!aSmile && !bSmile)
+}
+console.log('Is Person In Trouble: '+monkeyTrouble(true,true)); //true
+console.log('Is Person In Trouble: '+monkeyTrouble(true,false)); //false
+console.log('Is Person In Trouble: '+monkeyTrouble(false,true)); //false
+console.log('Is Person In Trouble: '+monkeyTrouble(false,false)); //true
+
+
+function stringNTimes(str, n){
+	result=""
+	var count=1
+	while(count<=n){
+		result=result+str;
+		count++;
+	}
+	return result;
+}
+console.log(stringNTimes('durga', 3)); //durgadurgadurga
+stringNTimes('sunny', 6) //sunnysunnysunnysunnysunnysunny
+stringNTimes('sunny', 0) // return empty string
+
+Ex:
+function luckySum(a, b, c){
+	if(a==13){
+		return 0;
+	}
+	if(b==13){
+		return a;		
+	}
+	if(c==13){
+		return a+b;
+	}
+	return a+b+c;
+}
+console.log(luckySum(13,5,6)) //0
+console.log(luckySum(5,13,6)) //5
+console.log(luckySum(5,5,13)) //11
+console.log(luckySum(5,6,7)) //18
+
+--------------------------
+JS Session - 6
+---------------
+Arrays:
+-------
+*** is an data structure to hold a group of values.
+*** An indexed based collection of elements.
+*** Array is always fixed in size.
+*** Array is always meant for homogeneous elements only.
+*** you can increase the size and decrease the size of array..
+*** By using index, you can Retrieve the value.
+*** By using index, you can Update the value.
+*** By using index, you can add the value.
+
+var n1=10;
+var n2=20;
+var n3=30;
+not recommended like this...
+
+var numbers = [10,20,30]
+index[0]
+
+The biggest advantage of arrays concept:
+so we are not required to declare multiple varaible values
+even  multiple values you can represent using single varaible
+thats why readability of the code is improved.. length of the code is going to reduce..
+more flexibility..
+
+var friends={"durga", "sunny", "bunny", "chinny"}
+console.log(friends[0]); -- durga
+console.log(friends[1]); -- sunny
+console.log(friends[100]); --> In JS we never get ArraysIndexOutOfBoundException -- 
+															simply its going to tell undefined.. value is not there..
+
+I want to replace with content value of array..
+friend[1] = "mallika"
+
+How to access array elements:
+------------------------------
+by using index
+
+How to update array elements:
+------------------------------
+by using index only
+friends[1] = 'mallika';
+
+Adding a new element to the array:
+----------------------------------
+once we creates an array size is fixed or not ?
+friends[4] = 'katrina';  -- valid
+
+Is it possible to add hetrogeneous elements or not ?
+like different types - number, string
+
+*** Array is always fixed in size.
+*** Array is always meant for homogeneous elements only.
+
+To overcome this problem only we go for collections concept..
+
+*** JS Arrays concept is nothing but our List concept.. Is not Array concept.
+*** Collections means -- Arrays and Objects
+
+friends[4] = 'katrina'; 
+console.log(friends); --> friends={"durga", "sunny", "bunny", "chinny", "katrina"}
+
+Is it valid or not at 20th index you adding:
+friends[20] = 'kareena' --- It is valid .. going to be added at 20th index only.
+All the remaining index will be filled with empty..
+console.log(friends);
+
+*** you can increase the size and decrease the size of array..
+By using index, you can Retrieve the value.
+By using index, you can Update the value.
+By using index, you can add the value.
+
+To create empty array:
+-----------------------
+var nums = []
+var numbers = new Array();
+
+How to find length of Array:
+-----------------------------
+by using 'length' variable.
+nums.length  --> How many no of elements are there..
+friends.length
+
+Is JS Array can hold random element or not:
+var random_collection=["durga", 1000, true, null]
+console.log(random_collection);
+random_collection.length -- returns 4 ( since 4 elements are there)
+
+*** JS Arrays can hold hetrogeneous elements also. Length is not fixed. you can add or remove the elements.
+
+hetrogeneous objects are allowed or not ? -- Yes
+Is it mutable or Immutable ? Can I able to change the content --> Its mutable
+Is it dynamic ( increase or decrease the size ) or not --> Yes
+How to find numbers of elements present inside array ? -- by using length variable
+
+Important Methods related to javascript arrays:
+-------------------------------------------------
+1. push()
+2. pop()
+3. unshift()
+4. shift()
+5. indexof()
+6. slice()
+7. splice()
+
+1. push()
+----------
+To add an element to last position. 
+by default is going to add at last position.. memory wont be wasted.
+returns number of elements.
+
+var numbers=[10,20,30,40]
+numbers.push(50)
+console.log(numbers); --> returns [10,20,30,40,50]
+
+2. pop()
+---------
+To remove and return last element.
+It is not going to take arguments..
+
+numbers.pop()
+console.log(numbers); --> returns [10,20,30,40]
+numbers.pop()
+console.log(numbers); --> returns [10,20,30]
+
+*** push() and pop() always talks about last element..
+*** unshift() and shift() both are exactly same as push() and pop() only. difference is these 2 always talks about first position.
+
+3. unshift()
+-------------
+is like push except that it will add in first element.
+To add element in the first position..
+
+numbers.unshift(777)
+console.log(numbers); --> returns [777,10,20,30]
+numbers.unshift(999)
+console.log(numbers); --> returns [999,777,10,20,30]
+
+4. shift()
+-----------
+is like pop() operation 
+To remove element from the first position..
+
+numbers.shift()
+console.log(numbers); --> returns [777,10,20,30]
+
+5. indexof()
+-------------
+To find the index of specified element Or To find the indexOf item/element.
+var numbers=[10,20,10,20,40]
+numbers.indexOf(10) --> 0
+numbers.indexOf(40) --> 5
+
+duplicate elements are allowed.
+if the specified element is not available then we are going to get  -1
+If the specified element is present multiple occurence then always returns first occurence element.
+
+6. slice()
+-----------
+we can use slice to get part of the array. one piece.
+slice means small piece.
+
+slice(begin, end)
+	returns from begin index to end-1 index
+
+var numbers=[10,20,30,40,50,60,70,80]
+var num1=numbers.slice(2,5) --> [30,40,50]
+var num2=numbers.slice() --> returns [10,20,30,40,50,60,70,80]
+
+Nested Arrays:
+---------------
+you can take another array inside array .. multi-dimesnional array also possible.
+
+var nums=[[10,20,30],[40,50,60],[70,80,90]]
+nums[0][0] --> 10
+nums[2][1] --> 80
+nums[1] --> [40,50,60]
+nums[2] --> [70,80,90]
+
+How you can retrieve the elements of an array?
+by using while loop, for loop, forEach loop..
+
+-------------------------------------------------------------------
+JS Session - 7
+---------------
+DOM with Java script -- then automatically JS can able to communicate with our HTML.
+var myh1=document.querySelector('h1')
+
+	var books=[]
+	var input=prompt('which operation You want to perform[add|list|exit]:')
+	while(input!='exit'){
+		if(input=='add'){
+			var newbook=prompt('Enter Name of the Book to add')
+			books.push(newbook)
+		} else if(input=='list'){
+			console.log("List of Available Books:");
+			console.log(books);
+		} else{
+			console.log('Choose valid option');
+		}
+		input=prompt('which operation You want to perform[add|list|exit]:')
+	}
+	console.log('Thanks for using our application');
+
+retrieve elements of the array:
+-------------------------------
+1. while loop
+2. for loop
+3. forEach() method
+4. for-of
+
+
+var numbers=[10,20,30,40,50]
+var i=0
+while(i<numbers.length){
+	console.log(numbers[i])
+	i++
+}
+
+var numbers=[10,20,30,40,50]
+for(x of numbers){
+	alert(x)
+}
+
+3. forEach() method
+--------------------
+arrayobject.forEach(function)
+for each element present in array apply specified functions..
+
+Ex:
+var numbers=[10,20,30,40,50]
+numbers.forEach(function (x){
+	alert(x);
+  }); --> for each element x present inside numbers. without function name is annonymous function 
+  
+Ex: 
+var numbers=[10,20,30,40,50]
+function show(x){
+	alert(x);
+}
+numbers.forEach(show); --> for every number present in array apply show function.. 
+
+//using annonymous function:
+numbers.forEach(function (x){
+	alert(x);
+});
+
+Ex:
+var heroines=['sunny', 'Mallika', 'Veena', 'Katrina', 'Deepika']
+heroines.forEach(function (heroine){
+	console.log('***********************');
+	console.log(heroine);
+	console.log('***********************');
+});
+
+Ex:
+var heroines=['sunny', 'Mallika', 'Veena', 'Katrina', 'Deepika']
+heroines.forEach(console.log) --> for each element apply console.log function
+
+Ex:
+var heroines=['sunny', 'Mallika', 'Veena', 'Katrina', 'Deepika']
+heroines.forEach(alert) --> for each element apply alert function
+
+How to delete array elements based on index:
+--------------------------------------------
+pop() -- which is always going to remove last element
+shift() -- which is always going to remove first element
+
+I want to remove only 4th element or 5th element..
+by using splice() method
+
+splice(index, numberofelements) --> index, numberofelements to remove
+var heroines=['sunny', 'Mallika', 'Veena', 'Katrina', 'Deepika']
+heroines.splice(3,1) -- Katrina will be removed
+heroines -- ['sunny', 'Mallika', 'Veena', 'Deepika']
+
+*** Array is mutable -- happily we are allowed to change the content
+*** String is immutable -- once we create a String object we are not allowed to change its content. 
+	we cannot perform any changes to that object. 
+	If we are trying to perform any changes then with those changes a new Object will be created.
+
+Ex: Array are mutable
+var heroines=['sunny', 'Mallika', 'Veena', 'Katrina', 'Deepika']
+heroines[3]='Kareena' -- you changed 3rd index will Kareena..
+console.log(heroines); --> ['sunny', 'Mallika', 'Veena', 'Kareena', 'Deepika'] 
+Here happily we are allowed to change the array content.
+
+Ex: String objetcs are immutable
+var name='Sunny'
+name[0]='B' --> I want to replace name[0] with B.
+console.log(name); --> still its pointing to Sunny
+
+name ---> pointing to Sunny
+With those changes a new Object will be created with 'Bunny'
+This object we are not giving any reference varaible nothing... now automatically by default this object is gone..
+
+Q1. Write a JS function to take an array as argument and print its elements in reverse order ?
+Q2. Write a JS function to take an array as argument and check to whether all elements are identical or not ( same or not) ?
+Q3. Write a JS function to find a Maximum value of given array ?
+Q4. Write a JS function to find sum of elements present in the given array ?
+
+
+//string is immutable
+public class Test{
+	
+	public static void main(String[] args){
+		String s = new String("durga");
+		s.concat("software");
+		SOP(s); // o/p will be durga --> always pointing to durga since we not assigned any object reference varaible.
+		
+		String s = new String("durga");
+		String s1 = s.concat("software");
+		SOP(s1); //  o/p will be 'durga software' -- a new object got created
+		
+		String s = new String("durga");
+		s=s.concat("software");
+		SOP(s); //old object will be gone for garbage collection..since reference varaible we reassigning.. o/p will be 'durga software'
+	}	
+}
+
+-----------------------
+JS Session - 8
+---------------
+Q1. Write a JS function to take an array as argument and print its elements in reverse order ?
+	reverse([10,20,30,40,50])
+	reverse(['A','B','C','D'])
+
+	function reverse(array){	
+		console.log('Array elements in reverse order:')
+		for(var i=array.length-1;i>=0;i--){
+			console.log(array[i])
+		}	
+	}
+	reverse([10,20,30,40,50]) --> output 50,40,30,20,10 
+	reverse(['A','B','C','D']) --> output - D, C, B, A
+
+Q2. Write a JS function to take an array as argument and check to whether all elements are identical or not ( same or not) ?
+identical([10,10,10,10,10])
+
+	function identical(array){
+		console.log('Test Elements are identical or not:')
+		var first=array[0];
+		for(var i=1; i<array.length; i++){
+			if(array[i] != first){
+				return false;
+			}
+		}
+		return true;	
+	}
+	identical([10,10,10,10,10]) -- true 
+	identical([10,10,10,10,20])  -- false
+
+
+Q3. Write a JS function to find a Maximum value of given array ?
+max([10,20,30,90,50])
+
+	function max(array){
+		var max=array[0]
+		for(var i=1; i<array.length; i++){
+			if(array[i] > max){ //current element greater than max 
+				max = array[i] //max will become current value
+			}
+		}
+		return max
+	}
+
+	max([10,20,30,90,50]) -- o/p is 90
+
+Q4. Write a JS function to find sum of elements present in the given array ?
+
+	function sum(array){	
+		var sum=0;
+		for(num of array){ //for every element present inside the array
+			sum = sum+num;
+		}
+		return sum;
+	}
+
+	sum([10,20,30]) -- 60
+	sum([10,20,30,40]) -- 100
+	sum([10,20,30,40,50]) -- 150
+
+Book Management Application:
+-----------------------------
+add, list, exit, delete
+
+*** In JS semicolon (;) is optional.
+
+var books=[]
+var input=prompt('which operation you want to perform [add|delete|list|exit]')
+while(input != 'exit'){
+	if(input=='add'){
+		addBook();
+	} else if(input=='list'){
+		listBooks();
+	} else if{input == 'delete'}{
+		deleteBook();
+	} else{
+		console.log('Please choose valid option');
+	}
+	input=prompt('which operation you want to perform [add|delete|list|exit]')
+}
+console.log('Thanks for using our application');
+
+function addBook(){
+	var newBook=prompt('Enter Book Name to add:')
+	books.push(newBook)
+}
+
+function listBooks(){
+	console.log('List of Available Books:');
+	for(book of books){
+		console.log(book);
+	}
+}
+
+function deleteBook(){
+	var name=prompt('Enter Name of the book to delete')
+	var index = books.indexOf(name)
+	if(index = -1){// means that book is not available
+		console.log('Specified Book not Available');
+	} else {
+		books.splice(index, 1) // from this index onwards, I want to delete only one book
+		console.log('Specified Book Deleted')
+	}
+}
+
+Objects:
+--------
+Array means Individual objects
+Objects means key-value pairs
+
+Array is always talks about group of individual object
+Object - is always talks about a group of objects as key-value pairs
+
+var variableName={key1:value1,key2:value2,....}
+
+key is nothing but variableName.. Key must be unique..
+
+Ex: movie object.. these many key-value pairs are there.
+	var movie={
+		name:'Bahubali',
+		year:2016
+		hero:'Prabhas'
+	};
+
+//numbers object with key-value pairs
+var numbers={
+	firstnumber:100,
+	secondnumber:200,
+	thirdnumber:300
+}
+
+How to access values from the object:
+-------------------------------------
+order is not applicable and hence index not applicable..
+
+1st way -- quotes are required
+movie['name'] -- o/p will be Bahubali
+movie["name"] Or movie.name
+movie['hero'] -- Prabhas
+
+2nd way -- no quotes required
+movie.name -- Prabhas
+
+--------------------------------------------------------
+JS Session - 9
+---------------
+Array Vs Object:
+Array is always talks about group of individual object
+Object - is always talks about a group of objects as key-value pairs
+
+Array means Individual objects
+Objects means key-value pairs
+
+To iterate the data over arrays we use - for-of()  loop generally
+To iterate the data in Objects concept - Loop
+
+*** Inside Array we can take Objects also
+*** Inside Objects, We can able to take Arrays also
+*** JS Objects can contain methods also.
+*** Object can contain data and methods/function also..
+*** It is possible to refer already existing function as object method..
+*** 2 ways to create an object:
+		var myobj={}
+		var myobj=new Object()
+
+Nesting of Arrays and Objects:
+-------------------------------
+array of objects concept: ( Inside array we can take Objects also)
+var movies=[{
+	name:'Bahubali',
+	year:2016
+	hero:'Prabhas'
+}, {
+	name:'Sanju',
+	year:2018
+	hero:'Ranveer'
+}, {
+	name:'Spider',
+	year:2017
+	hero:'Mahesh'
+}];
+
+How to access:
+movies[0] --> only first object is going to come
+movies[1]
+movies[0]["hero"] -- Prabhas
+movies[2]["year"] -- 2017
+
+Object of Arrays concept:
+---------------------------
+*** Inside Objects, We can able to take Arrays also
+Ex:
+var numbergroups={
+	fg:[10,20,30],
+	sg:[40,50,60]
+	tg:[70,80,90]
+}
+
+numbergroups.sg[1] --> 50
+numbergroups["sg"][2] --> 60
+
+Object Methods:
+----------------
+*** JS Objects can contain methods also.
+
+var myobj={
+	A:'apple',
+	B:'Bananna',
+	m1:function(){
+		console.log('Object Method');
+	}
+}
+myobj.m1() -- this is method call
+
+In Java:
+this keyword -- refers to current object
+
+*** Object can contain data and methods/function also..
+var movie={
+	name:'Bahubali',
+	year:2016,
+	hero:'Prabhas',
+	getInfo: function(){
+		console.log('Movie Name:'+this.name); //current movie object and corresponding value of name
+		console.log('Released Year:'+this.year);
+		console.log('Hero Name:'+this.hero);
+	}
+}
+
+movie.getInfo() -- to call this function..
+
+2 ways to create an object:
+-----------------------------
+var myobj={}
+var myobj=new Object()
+
+***It is possible to refer already existing function as object method..
+Ex-1: Already existing function you can refer..
+function demo(){
+	console.log('Demo Function');
+}
+var movie={
+	name:'Bahubali',
+	year:2016,
+	hero:'Prabhas',
+	getInfo:demo
+};
+movie.getInfo()
+O/p: Demo Function
+
+Ex-2: Already existing function you can refer..
+function demo(){
+	console.log('Demo Function:'+this.name);
+}
+var movie={
+	name:'Bahubali',
+	year:2016,
+	hero:'Prabhas',
+	getInfo:demo
+};
+movie.getInfo()  
+O/p: Demo Function: Bahubali
+
+If we demo() function directly then output is:
+Demo Function:
+
+Ex:
+---
+var numbers=[10,20,30,40]
+function f1(x){
+	console.log(x);
+}
+numbers.forEach(f1)
+
+Or using anonymous function:
+numbers.forEach(function(x){
+	console.log(x);
+})
+
+
+DOM: ( Document Object Model)
+-----
+var links=document.querySelectorAll('a')
+for(link of links){
+	link.style.background='green';
+	link.style.color='white';
+	link.textContent='Sunny Leone';
+	link.setAttribute('href', 'http://facebook.com');	
+}
+
+JS to communicate with HTML that concept is required using DOM.
+From Java Script if you want to communicate with HTML or CSS in the middle some concept is required that is DOM..
+
+Document - is nothing but HTML
+Object - is nothing but Java Script
+ 
+ 
+==> “how to go to next page on button click js”  ?
+	<button id="myButton" class="float-left submit-button" >Home</button>
+
+	<script type="text/javascript">
+		document.getElementById("myButton").onclick = function () {
+			location.href = "www.yoursite.com";
+		};
+	</script>

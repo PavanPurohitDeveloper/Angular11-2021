@@ -1,0 +1,166 @@
+Limitations of JavaScript:
+- No typesafety
+- we dont have compilation errors.
+- It will be complex in large based application development
+- debugging is more complex.
+
+
+TypeScript:
+- It is a superset of JavaScript, It is not adding any new features to the JavaScript apart form the datatype.
+- The compiled version of the typescript is a javascript. it will generate the JS code automatically.
+- TypeScript = JavaScript + datatypes + Compiler.
+- To install typescript we use a command "npm install -g typescript" Or "npm install -g typescript@Version"
+- To verify the typescript version "tsc -v"  -- Version 4.1.5
+- TypeScript will never understand by the browser.
+- The moment you run >tsc myScript.ts, It will create a myScript.js file automatically
+- It was introduced by "Andrew Heze;sibeg" who invented C# .Net from Microsoft
+- Will compile typescript inorder to generate the javascript, to get the javascript we use a command "tsc <file_name.ts>"
+- If we have multiple typescript file, you want to generate a single *.js file 
+    > tsc file.js file1.ts file2.ts file3.ts
+    ( This will happen internally in angular application).. automatically all the *.ts files will be converted into single *.js file.
+
+
+Features of TypeScript:
+- DataTypes and Compile time type checking
+- Classes
+- Modules
+- interfaces
+- OOPS
+- Generics
+- Optional and Default parameters and rest parameters.
+
+DataTypes in Typescript:
+- It is used to specify what type of data a variable can hold.
+    - Primitive   = simple types
+        - number : 
+            can be anything integer value, floating values, double value, decimal value.. int, float, char, decimal, double, octal, dexa decimal values we can store etc.
+        - string : we can use double quotes "" or  single quotes ''  or backticks ``  ( "Srikanth" / 'Srikanth'  /  `Srikanth` )
+        - boolean : true or false values.       
+    - Non-Primitive  = Complex types
+        - Arrays  :  we can declare -- var ar:number[] = [10, 20];   /  var ar:Array<number> = [];
+        - Classes
+        - interfaces
+        - Tuple : is also kind of Array only.
+                  var DOB:[number, string, number] = [22, "Jul", 1990];
+                  var ar: number[] = [10, 20, 30];
+                  var dob: [number, string, number] = [22, "25", 90];
+        - Enumeration (Enums): 
+            enum color{
+                Green, Red, Blue
+            }
+
+
+Note: To create any variable in typescript we use "var/let/const".
+
+var Vs let:
+- var is function scoped and let is blocked scoped.. we cannot use it another block.
+- var can be re-declared for any number of times, but once if we created a let variable can't be re-declare in that block.
+- In angular mostly will be using "let" only.
+- Types are initialized even if we dont specify type also.
+     var marks = 33;
+    var result: string = "pass";
+
+   // To generate the *.js file
+   D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>tsc example1.ts
+
+    D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>node example1.js
+    Inside the block fail
+    Outside of the block fail
+
+- To declare Array:
+    let marks: Array<number> = [45, 67, 89];
+    var courses: string[] = ["HTML", "CSS", "Javascript", "JQuery", "ANgular"];
+- 
+
+Class:
+- It is a collection of data members and member functions.
+    data members - to strore the data
+    member functions - to write business logic
+- Object: An Object is an instance of class.
+    Physical existence of object.
+- OOPS is providing two features    
+    - security
+    - Reusability
+- Any PL, if it is an OOPS it should follow 4 principles
+    - Encapsualtion: Binding everything in class ( writing everything inside a class)
+    - Abstraction: Hiding the implementation and provide security
+    - Poly Morphsim: One to many behaviors.. same function with different parameters.
+    - Inheritance: Acquiring the properties from one to another.
+
+Optional Parameters: These will be created with "?", If we have an optional parameter no need to pass value and its optional. 
+- we can pass default value but it should not be optional parameter.
+- Every optional/default parameter should be written at the end of the parameter list.
+- we can override the value of default parameter so that it will asign with that value else it will display default value.
+
+Ex:
+//Optional parameter
+constructor(custId: number, custName: string, custBal: number, customerSpouse?: string) {
+        //this - is an object of current class
+        this.customerId = custId;
+        this.customerName = custName;
+        this.customerBal = custBal;
+        this.customerSpouse = customerSpouse;
+    }
+
+//Default parameter
+constructor(custId: number, custName: string, custBal: number, customerSpouse: string = "John") {
+        //this - is an object of current class
+        this.customerId = custId;
+        this.customerName = custName;
+        this.customerBal = custBal;
+        this.customerSpouse = customerSpouse;
+    }
+    
+ - Overriding is not supported.
+
+Access Modifier:
+It gives the scope the member of the class.
+- In TS we have 3 types:
+    - private: used only within the class
+    - protected: used in the same class and in the child classes.
+    - public : we can use it any where
+- Default access modifier is "public"
+- Acess modifier should be given only for class members, not for the class.
+
+Inheritance:
+- It is a process of acquiring the properties form one class to another class.
+- In TS also we have all different tyoes of Inheritance.
+    - Single Inheritance: Single Base class + Single Derived class
+    - Multi Level: Different level of classes
+    - Heirarichal: Single Parent class + Multiple child classes.
+    - Multiple: Multiple parents + Single Child
+    - Hybrid: combination of any two
+- The gives which gives properties is called Parent/Base/Super class.
+- The class which acquire the properties is called Child/Derived/Sub class
+- In TS to provide the inheritance between the classes we use "extends"
+- Once if parent class is having constructor, in child class we must call it.
+
+    
+- We always create the Object for child classes not to Base class/Parent class.
+
+Abstract class and Methods:
+- A class for which we have an incomplete functionality, which may be provided in child classes.
+- A class which contains atleast one abstract function.
+- Abstract function is having only declaration and not the implementation.
+- Abstract classes should not be instantiated using new keyword. Cannot create an instance of an abstract class.
+- Abstract methods from abstract class we must provide implementation in child class.
+
+Interfaces:
+- contains only abstract methods. contains only definitions and does not contain any implementation.
+- It is a contract between itself and it's derived class. The contract is interface provides definitions and derived class must provide implementations.
+- To create we use "interface" keyword.
+- By default everything is "public abstract"
+- we use "implements" keyword
+
+export/import:
+- Once you specify export, we can import any where.
+
+Generics:
+- It is a general datatypes.
+- We can create our own types.  <> this is placeholder, we can specify any names within placeholder.
+    class keyValuePair<T, U> {
+
+
+}
+
+

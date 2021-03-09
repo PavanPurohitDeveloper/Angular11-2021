@@ -1,0 +1,253 @@
+Angular + Spring boot REST API example:
+=========================================
+reference URL - https://www.youtube.com/watch?v=_rMAnZIcRiU&pbjreload=101
+
+- We will create a very simple "single page application" using Angular 10 as front end and spring boot as backend.
+- Angular is a platform and framework for building single-page client applications using HTML and TypeScript.
+- Angular is written in TypeScript.
+- Spring boot is to develop RESTFul web services and microservices.
+
+Angular application architetcure:
+----------------------------------------
+View Templates  --> Components  ---> Services  
+
+We build two projects:
+1. Springboot backend -> to create and expose REST API
+2. Angular-frontend - Consume REST API
+
+
+{
+  "email": "ramesh@gmail.com",
+  "firstName": "Ramesh",
+  "lastName": "Fadatare"
+}
+
+{
+  "email": "tom@gmail.com",
+  "firstName": "Tom",
+  "lastName": "Cruise"
+}
+
+{
+  "email": "tony@gmail.com",
+  "firstName": "Tony",
+  "lastName": "Stark"
+}
+
+getAllUsers: api
+-----------------
+[
+  {
+    "id": 1,
+    "firstName": "Ramesh",
+    "lastName": "Fadatare",
+    "email": "ramesh@gmail.com"
+  },
+  {
+    "id": 2,
+    "firstName": "Tom",
+    "lastName": "Cruise",
+    "email": "tom@gmail.com"
+  },
+  {
+    "id": 3,
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "email": "tony@gmail.com"
+  }
+]
+
+Install NodeJS
+//To verify NodeJS version
+node -v
+
+//To verify NPM
+npm -v
+
+//Install Angular CLI
+> npm install -g @angular/cli
+
+//to verify angular version
+> ng --version
+
+//create angular application
+> ng new <my-dream-app>
+
+//to execute angular application
+> cd my-dream-app
+> ng serve  OR ng s -o
+
+
+package.json file --> contains dependencies and dev dependencies. 
+					  javascript libraries and packages that are required to run our angular application.
+					  If you install any library using npm command this file will get updated.
+					  Ex: If you install bootstrap using npm, that bootstrap entry will add this to package.json file.
+					 something like maven pom.xml file.. where we keep all the dependencies right..
+					 
+ng serve
+ng build -- In orde to build our angular projects
+ng test -- to run test cases.					 
+
+*** whenver u run the command -  "npm start" internally it will call ng serve to run angular application.
+
+main.ts file --> this is the main entry point for our angular application.
+				  this piece of code, which will bootstrap AppModule. 
+				 //this line of code that will bootstrap and kick start AppModule
+			
+			platformBrowserDynamic().bootstrapModule(AppModule)
+			  .catch(err => console.error(err));
+
+app.module.ts file -> 
+	Angular appln atleast have one module i.e., root module. ( that is AppModule in our project)
+	Internally bootstrap AppComponent --> bootstrap: [AppComponent]
+		
+app.component.ts file --> This AppModule internally bootstrap and kickstart "AppComponent"		  
+						  AppComponent is our root component of our angular appln.
+						  Angular appln atleast contains root component i.e., AppComponent.
+						  
+						  export class AppComponent {
+							 title = 'angular-frontend';
+						  }
+
+Angular is basically modular in nature . It contains modules. Each module can innternally contains - 
+	Components, Services, directives etc.
+		
+index.html file --> Inside a body tag we have app-root tag. This is custom html tag.
+					In angular we call it has selector. and this selector we define in app.component.ts file.
+					selector is like custom html tag.
+			<body>
+			  <app-root></app-root>
+			</body>
+
+styles.css file --> we can keep all the global CSS files inside this file..
+					You can add global styles to this file, and also import other style files.
+
+environments folder --> All the environment related configurations goes inside these files..
+						environment.ts file, environment.prod.ts file
+
+assets folder -> we can keep images and static files.
+
+How the control flows in angular application?
+--------------------------------------------------
+first main.ts file is get served.. this is the entry point of our angular application.
+	Inside this file AppModule is get bootstraped..
+	platformBrowserDynamic().bootstrapModule(AppModule) ->  this will bootstrap and kick start AppModule
+	
+AppModule internally - bootstarp AppComponent ( Inside app.module.ts file )
+
+AppComponent - is basically angular component and it has selector ( Inside app.component.ts file)
+				selector: 'app-root',
+				templateUrl: './app.component.html',
+				
+				Inside index.html, we called this selector to call the component. It will component template.
+				Inside App component template(app.component.html), we write html code..
+
+Inside index.html you can add bootstrap 4 cdn link.. inside head section.
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+			
+1. Create a typescript class i.e. a model which will hold the response of REST Api 
+	D:\MyDevelopment\Angular11\Feb-6AM\angular-frontend>ng g class user  --> g = generate
+	CREATE src/app/user.spec.ts (146 bytes)
+	CREATE src/app/user.ts (22 bytes)
+	
+2. //model class which will hold the response of REST Api
+export class User {
+
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+3. Create angular servcie class which will communicate with server using REST Api and it will get the data from REST Api
+and it will store inside User model class.
+
+	g = generate; s = service; name of service class
+
+	D:\MyDevelopment\Angular11\Feb-6AM\angular-frontend>ng g s user
+	CREATE src/app/user.service.spec.ts (347 bytes)
+	CREATE src/app/user.service.ts (133 bytes)
+
+//This service class is annotated with @Injectable decorator. 
+	This decorator basically tells to angular that, this class -"UserService" can be injected in any component.
+	we can use dependency injection feature to inject UserService in any component and 
+	Component will invoke UserService methods.
+	This service - UserService it will inject at root level which is provided in providedIn: 'root' section. 
+	so we no need to add in app.module.ts file.
+	
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class UserService {
+
+	  constructor() { }
+	}
+
+4. we use HTTP client module from angular to call REST APi.
+	Go to inside app.module.ts file add HTTP client module.
+	import { HttpClientModule } from '@angular/common/http'; //Install this module from this package.
+	
+	Also add in the imports section also..
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule
+	],
+	
+5. Go to UserService.ts class file, and will add HttpClient to make a REST API call.
+	import { HttpClient } from '@angular/common/http';
+	
+	next Inject HttpClient inside a constructor.
+	
+	get() method returns --> @return — An Observable of the HttpResponse, with a response body in the requested type.
+
+6. Create a component
+	ng g c <name_of_component> --> c = component
+	ng g c user
+	
+	D:\MyDevelopment\Angular11\Feb-6AM\angular-frontend>ng g c user   //It will create 4 files..
+		CREATE src/app/user/user.component.html (19 bytes)
+		CREATE src/app/user/user.component.spec.ts (612 bytes)
+		CREATE src/app/user/user.component.ts (267 bytes)
+		CREATE src/app/user/user.component.css (0 bytes)
+		UPDATE src/app/app.module.ts (545 bytes)
+		
+	Angular CLI will automatically add newly created components inside app.module.ts  file inside declaration section.
+	It will automatically add UserComponent to the AppModule.
+
+7. write a logic to populate the data on a template.
+
+*ngFor - this directive will loop for array of objects.
+{{}}  -- Interpolation in angular
+
+
+Errors:  data is not showing on Angular UI
+----------
+Both application running on different ports.. we get this error.. to fix this errror
+we need to add @CrossOrigin(origins = "http://localhost:4200") annotation in UserController class.
+
+Angular is running in development mode. Call enableProdMode() to enable production mode.
+localhost/:1 Access to XMLHttpRequest at 'http://localhost:8080/api/v1/users' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+:8080/api/v1/users:1 Failed to load resource: net::ERR_FAILED
+core.js:6157 ERROR HttpErrorResponse
+defaultErrorLogger @ core.js:6157
+client:52 [WDS] Live Reloading enabled.
+
+
+
+	
+		
+				
+
+				  
+				  
+				  
+
+
+
+
+
+
+
+
+

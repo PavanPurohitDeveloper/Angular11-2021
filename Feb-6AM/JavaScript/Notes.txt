@@ -1,0 +1,109 @@
+JavaScript:
+- HTML is used for describe the content on the browser
+- CSS is used for Styling the HTML elements.
+- Both HTML, CSS and Bootstrap are mainly used to design static pages.
+- JS is used to prepare dynamic web pages.
+- It is scripting language which will be used to manipulate the DOM at runtime, by chnaging the behavior of
+ the elements and also used to ass/remove the HTML elements.
+
+documentation to learn: https://developer.mozilla.org/en-US/docs/Learn/JavaScript
+
+- Important Notes:
+    - Including the script by using <script> tag.. Inside the body tag is best option to include script tag.
+        <script>
+            code..
+        </script>
+    - Create the variables  by using var
+        var x=10;
+        var y="welcome"
+    - Identify the elements from the DOM.
+        document.getElementById()
+        document.getElementByName()
+        document.getElementByClassName() ..etc
+    - Creating Functions
+        is a reusable block of code.
+        function <functionName>(arguments){
+
+        }
+     - Events and Event Handler(Functions)
+        Event is an action performed by User. That action can handle by  Event Handler i.e. using Functions  
+            <button onclick="funName()" >Click Me</button>
+     - Type casting  (Optional)
+
+ ### Which Javascript version you using?
+------------------------------------
+ECMAScript latest version - ES6
+JS is not having any version numbers..   
+
+Add the below extensions in Visual studio:
+-------------------------------------------
+Angular Snippets (Version 11)
+HTML CSS Support
+open in browser
+Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
+
+DOM - Document Object Model.
+----------------------------
+For every HTML element at runtime, browser it creates an Object
+Collection of Objects which are created for every HTML element.
+
+innerText: will be used to append some context to the HTML elements at runtime, 
+           but innerText property will not identify HTML tags in the content.
+
+innerHTML:- will be used to append some context to the HTML elements at runtime, 
+            but innerHTML property will identify the HTML tags which are presented in the content.
+
+Javascript Objects:
+- Object
+- string
+- number
+- array
+- json
+
+Array:
+- It is a collection of items together.
+- In JS, we dont have typesaftey so that in an array we can have any type of elements,
+- Every element is associated with an index and always index will starts from "Zero".
+- In JS Array is a built in object and it provides different methods and properties.
+
+- push
+- pop
+- splice
+- slice
+
+Conditional statements:
+- simple if
+- if else
+- Nested if else
+
+
+Loops:
+- for Loops
+- forEach
+- while
+- do while
+- for..in
+- for..of
+
+slice() ==> It will return a copy of an array with new elements. 
+            we can use slice to get part of the array. one piece. slice means small piece.
+            slice(begin, end)
+	        returns from begin index to end-1 index
+            slice(1, 3)  -> [10, 50]
+
+            var numbers=[10,20,30,40,50,60,70,80]
+            var num1=numbers.slice(2,5) --> [30,40,50]
+            var num2=numbers.slice() --> returns [10,20,30,40,50,60,70,80]
+
+
+splice() ==> It will return a copy of an array with new elements..from this index onwards, I want to remove elements
+            I want to remove only 4th element or 5th element.. In that particular position It will add the elements also.
+            Ex: [10, 20, 30, 40 , 50]
+            splice(1,2, 15, 16)
+
+Arrays and JSON:
+- Arrays will store the data based on index, For every element we have index.
+- JSON will store the data in key value pair. where Key and value are both user defined.
+    var obj = {"empno": 101, "Ename": 'Srikanth', "Salary": 12345};
+
+    

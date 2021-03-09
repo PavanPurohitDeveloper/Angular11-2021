@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON with Array Example</title>
+
+    <script>
+
+        function GetData() {
+
+            var emps = [
+                { "Empno": 101, "Ename": 'Srikanth', "Salary": 12345, "isActive": true },
+                { "Empno": 102, "Ename": 'Raju', "Salary": 23456, "isActive": false },
+                { "Empno": 103, "Ename": 'Ramesh', "Salary": 23424, "isActive": true },
+                { "Empno": 104, "Ename": 'Naresh', "Salary": 356667, "isActive": false },
+                { "Empno": 105, "Ename": 'Suresh', "Salary": 777788, "isActive": true }
+            ];
+
+            /**
+            var divObj = document.getElementById('div1');
+            var s = "";
+            for (i = 0; i < emps.length; i++) {
+                s = "Employee No is: " + emps[i].Empno + "<br>";
+                s += "Employee Name is: " + emps[i].Ename + "<br>";
+                s += "Employee Salary is: " + emps[i].Salary + "<br>";
+                s += "Employee Salary is: " + emps[i].isActive + "<br>";
+                divObj.innerHTML += s;
+            }
+            **/
+
+            var tableObj = document.getElementById('table1');
+            var s = "";
+            for (var i = 0; i < emps.length; i++) {
+                s = s + "<tr>";
+                s = s + "<td>" + emps[i].Empno + "</td>";
+                s = s + "<td>" + emps[i].Ename + "</td>";
+                s = s + "<td>" + emps[i].Salary + "</td>";
+                s = s + "<td>" + emps[i].isActive + "</td>";
+                s = s + "</tr>";
+                tableObj.innerHTML = s;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+<h1>Array of JSON</h1>
+<hr>
+<button onclick="GetData()">GetData</button>
+<table border="1" id="table1">
+    <tr>
+        <th>Eno</th>
+        <th>Ename</th>
+        <th>Salary</th>
+        <th>Status</th>
+    </tr>
+</table>
+
+</html>

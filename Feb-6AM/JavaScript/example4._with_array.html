@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example with Array</title>
+
+    <script>
+        function F1() {
+            var names = ['HTML', 'CSS', 'Javascript', 'Typescript', 'Angular'];
+            var lstObj = document.getElementById('list1');
+            //At runtime we are creating li tags with list of values..
+            for (var i = 0; i < names.length; i++) {
+                lstObj.innerHTML += "<li>" + names[i] + "</li>";
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="F1()">GetData</button>
+        <br>
+        <ul id="list1"></ul>
+
+    </div>
+
+</body>
+
+</html>
