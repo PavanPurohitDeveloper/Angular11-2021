@@ -1,0 +1,26 @@
+<h1>Product Details</h1>
+
+<dl>
+  <dt>Name</dt>
+  <dd>{{product.Name}}</dd>
+
+  <dt>Price</dt>
+  <dd>{{product.Price}}</dd>
+
+  <dt>Quantity</dt>
+  <dd>{{product.Qty}}</dd>
+
+  <dt>Mfg.Date</dt>
+  <dd>{{product.mfd.toLocaleDateString()}}</dd>
+
+  <dt>Stock Status</dt>
+  <dd>{{(product.InStock == true) ? "Available": "Out of Stock"}}</dd>
+
+  <dt>Total</dt>
+  <dd>{{product.Price * product.Qty}}</dd>
+
+  <dt>URL</dt>
+  <dd><a [href]="product.Url">Click here for product Info</a></dd>
+  <!-- -->
+
+</dl>

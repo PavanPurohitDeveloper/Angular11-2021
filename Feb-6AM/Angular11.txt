@@ -184,7 +184,8 @@ npm i bootstrap
 
 Run this command when project does not contains "node_modules" folder ?
 --------------------------------------------------------------------------
-> npm install.
+> npm install.  -- It will create "node_modules" folder in your local machine.. and it will install all the necessary files .. 
+				It will take information from package.json file and install the relevant packages which are needed to run the application.
 and then run the application..
 
 src/app folder --> this is the place where we write our source code w.r.t appln development
@@ -388,6 +389,7 @@ class Customer {
     //To initialize with data for class members then we use constructor.
     //It is a special method which will invoke when the object of the class is created. automatically constructor will be called.
     //we can have only one constructor in Typescript.
+	//mainly used for dependency Injection.
     constructor(custId: number, custName: string, custBal: number) {
         //this - is an object of current class
         this.customerId = custId;
@@ -657,6 +659,7 @@ https://angular.io/guide/architecture
 5. Services - is a reusable code which used to get the data from the servers and share it to components.
 
 6. Dependency Injection - It is a Design pattern used to Inject the data from service to component class.
+						  is a kind of design pattern where you can Inject something.	
 
 7. Pipes - used to transform the data before it displays in the template.
 
@@ -705,11 +708,11 @@ D:\MyDevelopment\Angular11\Feb-6AM>ng new ComponentsDemo
 Building Blocks:
 -----------------
 1. Component
-2. Template
-3. Date Binding
+2. Template  -- is a simple html file
+3. Date Binding -- is a mechanism which can be used to share the data from template to the component.
 4. Directives
 5. Services
-6. Dependency Injection - is a kind of design pattern.
+6. Dependency Injection -- is a kind of design pattern where you can Inject something.
 7. Pipes
 8. Routing
 9. Modules
@@ -717,36 +720,285 @@ Building Blocks:
 - Every Angular element is having 3 parts:
 	- import statements  -- it is used to import/get the core packages.
 	- decorator   -- is used to write the metadata.
-	- export class  -- is used to export/send the functionality.
-- Decorator is used to differentiate the angular elements from one to another.
+	- export class  -- is used to export/send/gives the functionality.
+	
+==> import { Component } from '@angular/core'; //@angular/core is a package.
 
-Components:
+### Components:
+------------------
 - A Component is main building block of angular, and angular was completely implemented with the help of Components.
-- A Component is a reusable UI, which contains state of the page.( contains data of page and few additional functionality )
+- A Component is a reusable UI, which contains state of the page.( contains data of page along with few functionalities).
 - A Component is a typescript class which was created with the help of @Component() decorator.
+- Component contains metadata.
 
+### Decorator: 
+----------------
+- Component contains metadata.
+- Decorator is used to write the metadata. is like information about the component.
+- Decorator is used to differentiate the angular elements from one to another.
+			that means If you want to create a component then we will be using @Component{} decorator.
+			Suppose if you want to create a Pipe, there we will use @Pipe{}
+			Suppose if you want to create a routing mechanism i.e., Module then we will use *ngModule{}
+			Suppose if you want to create a Service, there we will use @Injectable{}
+			Suppose if you want to create a Module, there we will use @Module{}
+Example:
+	@Component(
+	  {
+		selector: 'employee', //selector is used to select the component at runtime.  we can give anyname.
+		template: `
+		  <div>
+			Employee ID is: {{empID}}<br>
+			Employee Name is: {{empName}}<br>
+			Employee Salary is: {{empSal}}
+		  </div>
+		  `,
+		styles: ['text']
+	  }
+	)
+
+### difference b/w template and templateUrl ?
+----------------------------------------------
+template - is mainly used for Inline html. if you want to write html code within component level
+templateUrl - you can create in a separate html file and make use of it.
+
+### difference between execution of angular appln using "ng serve" Vs "n g s -o"  ?
+------------------------------------------------------------------------------------
+> ng s -o  -- it will get open from google chrome browser automatically..
+> ng serve -- Here manually you suppose to open the browser and need to run it.
+
+### Execution of Angular:
+---------------------------
+first file execution will starts from "main.ts".. similar to main() method in java..
+from "main.ts" file, Bootstrapping/Initializing the AppModule which is inside "app.module.ts" file.
+From "app.module.ts" file, It is Bootstrapping/Initializing the AppComponent.
+AppComponent is a component class..AppComponent is getting instantiated with the help of selector.( selector: 'app-root')
+ A selector which is used to instatiate the component. which will take the responsibility to get into the Application.
+This selector: 'app-root' we will be using inside "index.html" file.
+	<body>
+		<app-root></app-root>
+	</body>
+
+Flow is:
+- first request will go to main.ts ..
+- From the main.ts we have AppModule.ts ..
+- From the AppModule.ts generally , we have AppComponent.ts ..
+- From the AppComponent.ts, whatever the selector we are having, we are going to pick the selector, and giving that in the index.html.
+- index.html is the starting page to display.. index.html is UI page.
+- main.ts is the programming page/file..	
+
+==> first request will go to main.ts ==> AppModule.ts  ==> AppComponent.ts ==> Selector ==> index.html			
+		
+Module - is the Parent one
+Component - is the child one
+Every Component must be associated with one module.
+Once if you create a component and you to tell explicitly , that must must define in the declarations{} section.
+register my component (Ex: EmployeeComponent) and which is as part of AppModule, 
+	and if you want to tell explicitly , that must must define in the declarations{} section.
+
+
+-> First step## Inside app.module.ts - register the component (Ex: EmployeeComponent) for a Module @NgModule().
+						  Bootstrap the component which one you want to run..(Ex: EmployeeComponent)
+						  
+-> second step## Inside index.html, whatever selector we having, same selector has to given like a html.
+								    We define only one component inside <body> </body>.. we define outside for all the remaining components.		
+-> One component should contain only one templateUrl.
+-> We can bootstrap any number of components. its an Array. good practice is define single component.
+
+which component is identified in the bootstrap section of the AppModule that component selector is getting loaded first time..
+
+"app.module.ts" file:	
+	@NgModule({
+	  declarations: [
+		AppComponent,
+		EmployeeComponent,
+		RegisterComponent
+	  ],
+	  imports: [
+		BrowserModule,
+		AppRoutingModule
+	  ],
+	  providers: [],
+	  bootstrap: [RegisterComponent, EmployeeComponent]
+	})
+	export class AppModule { }
+		
+	
+### how to change my angular port number?
+------------------------------------------
+> ng s -o --port=
+
+3-9-2021: 
+----------
+"app" folder is the default folder where you can have all the development code..
+--> app.component.spec.ts -- This is all about specification file..This is used for unit testing..
+
+Note: By using Angular CLI we create component using a command.
+> "ng generate component <name> --options"  | "ng g c <name> --options"
+
+Example:
+> ng g c Demo
+	It will generate 4 files:
+     i. demo.component.html
+	 ii. demo.component.css
+	 iii. demo.component.ts
+	 iv. demo.component.spec.ts
+	 
+	 D:\MyDevelopment\Angular11-2021\Feb-6AM\ComponentsDemo>ng g c Demo
+		CREATE src/app/demo/demo.component.html (19 bytes)
+		CREATE src/app/demo/demo.component.spec.ts (612 bytes)
+		CREATE src/app/demo/demo.component.ts (267 bytes)
+		CREATE src/app/demo/demo.component.css (0 bytes)
+		UPDATE src/app/app.module.ts (673 bytes)   --> automatically it will update in app.module.ts file..
+	
+> ng g c Demo --skip-tests  --> It will skip spec.ts file	
+	It will generate 3 files:
+		 i. demo.component.html
+		 ii. demo.component.css
+		 iii. demo.component.ts
+	
 ### Data Binding mechanism:
 -----------------------------
-One way binding:- Interpolation, property binding, Event binding
-Interpolation : can we written with {{}}  is one of the mechanism which used for data binding .. is used to get the data from component to template.
-property binding: can we written with []
-Event binding: can we written with ()
-two way binding: [()]
+- Angular is completely made up of Component only..
 
-Execution of Angular:
---------------------------
-first request will go to main.ts ==> AppModule.ts  ==> AppComponent.ts ==> Selector ==> index.html
+- It is a mechanism which can be used to bind/share the data from component to the template and template to the component.
 
-- main.ts file => first file execution starts
-					Bootstrap/Initializing the AppModule
-Inside AppModule.ts  	
-					Bootstrap/Initializing the AppComponent
+- data binding means, data whatever we having in the component class, if you want to display that data in a template, 
+then we suppose to have data binding..
+
+- Data Binding is basically a technique which will allows you to bind the model data to the View Page 
+		and View data to the Model.
+
+- Angular is also having kind of MVC ( Model view Controller) kind of architecture. 
+	Model is nothing but its data. Model contains only data..
+	Controller is nothing but component file.. Controller is going to kick the data and giving it to the View Page.
+	View is nothing but html.
+
+- Data Binding is nothing but concept of binding the data from from  HTML to the component and component to the HTML.
+		that means, data sharing between these two..
+	
+In Angular we have two types bindings:
+1. One-way Data binding
+2. Two-way Data binding
+
+1. One-way Data binding: is something like read-only technique. reading the data.. One Direction.. from Component to template and from template to component.
+						 Its always read the data from Model and bind it to the View. Only one time..
+						 Suppose View is changing the particular data that is not getting updated on the Models/Component.
+						
+2. Two-way Data binding: is something bi-directional.. bi-directional means It will read the data from the Component 
+						and display it in the template. Suppose from the template if you are doing any modification, and
+						same modification will get affected on the component.
+
+One way data binding:- has 3 options:
+ - "Interpolation"
+ - "property binding"
+ - "Event binding"
+ 
+> Interpolation : can we written with {{ }}  --> Component ==> Template
+				  - Whenever the component is having something data, that data you want to display it in a template.
+				  - is used to get the data from component to template.
+				  - we can write some condition also.
+				  
+		*** If you want to display direct values generally we go with Interpolation sntax.
+				
+> property/attribute binding: can we written with [ ]   --> Component ==> Template
+					-- this also can be used to get the data from component to template.
+					Lets say I have property - ename='Srikanth';  ==> In html you display like this -- <h2>{{ename}}<h2>
 					
+					Lets say I have property - url = "http://www.nareshit.in"  ==> In html you display like this -- <a [href]="url">Naresh IT</a>
+					for which attribute, you guys want to assign the property value for that we can give [] square brackets instead of Interpolation synatx.
 					
-selector which is used to instatiate the component.					
+		*** If you want to give any values for the attributes of html then we go with attribute binding sntax.
+					
+					<dt>URL</dt>
+					<dd><a [href]="product.Url">Click here for product Info</a></dd>
+					
+> Event binding: can we written with ( ) parrenthesis.  -->  Template ==> Component
+				   - can be used to handle the data from template to component.. one way direction..
+				   Ex: Form submission.
+											
+Two-way Data binding: this can be written with [( )]  
+					  - is something bi-directional..
+					  - To implement this - [(ngModel)]   --> I have something in the Template and I want to share it to component.
+															  Template <=> Component
+															  Or Else I have something in the Component and I Just want to get it and display it on the template. 
+					 - Angular handles two-way data binding with the combination of event and property binding.
+					 - In this binding once if the value is changed in one place will gets effected in both the places.
+					 - To work with this we use [(ngModel)] , which is a directive. this directive is avialble in "@angular/forms" in module "FormsModule".
+						import { FormsModule } from '@angular/forms';
+					 - Always [(ngModel)] or two-way binding is used for input elements.
+			ngModel means- whatever the values we pass on input fields and we capture those values in the component.
+					 
+		*** whenever I am doing any modification on the component, automatically its getting updated in the HTML.
+		    Once if the hTML is affected , that will get displayed on the component.
+					 
+### when we create a component it implements OnInit ? and what is ngOnInit() method ?
+---------------------------------------------------------------------------------------
+export class DemoComponent implements OnInit {
 
+  constructor() { }
 
-how to change my angular port number?
+  ngOnInit(): void {
+  }
+}
+
+dl - definition list tag
+dt - definition term tag
+dd - definition data tag
+
+Directives:
+------------
+- It is used to convert static DOM into dynamic DOM.
+- It is responsible to extend the behvaiour of HTML.
+- In angular we have few pre-defined directives followed with custom directives.
+- There are 3 categories:
+	- Component  -- Internally Component itself is directive.
+	- Structural Directives - Used to add/remove the HTML elements
+		> *ngIf
+		> *ngIf then else
+		> *ngFor
+		> *ngSwitch	
+	- Behvaiour Directives - Used to apply dynamic CSS styles/properties.
+		> [ngStyle]
+		> [ngClass]
+	
+*** Bootstrap is CSS framework
+*** All the modules should be imported in the app.module.ts file under imports section..
+	 imports: [
+		BrowserModule,
+		FormsModule
+	  ],
+
+### How we are invoking component ?
 --------------------------------------
+- using selector
+
+### How to intergate bootstrap into our application ?
+--------------------------------------------------------
+> npm install bootstrap
+> Once the installation is done it will be added to node_modules folder
+> To intergate with the application we import it in the styles.css file.
+	@import '../node_modules/bootstrap/dist/css/bootstrap.css'
+> In angular.json file also you can add
+	"styles": [
+              "src/styles.css"
+            ],
+
+### what is *ngIf
+--------------------
+- It is a Structural Directive which can be used to control the appearance of any HTML element
+- It is used to add/remove the HTML elements from the DOM.
+- used to work only with boolean value.
+synatx:
+	<tag *ngIf="boolean"></tag>
+
+	
+template reference variable -> ng-template
+
+### Event listeners:
+----------------------
+https://developer.mozilla.org/en-US/docs/Web/Events#event_listing
+
+	
+
 
 

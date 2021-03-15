@@ -211,7 +211,7 @@ style.css --> /* You can add global styles to this file, and also import other s
 	 
    
 4 ng g component employee
-  it will generate 2 files
+  it will generate 4 files
      i. employee.component.html
 	 ii. employee.component.css
 	 iii. employee.component.ts

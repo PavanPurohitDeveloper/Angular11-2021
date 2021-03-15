@@ -1,0 +1,48 @@
+<h1>Two-way Data Binding</h1>
+<div>
+  <h2>Register Product</h2>
+
+  <dl>
+    <dt>Name</dt>
+    <dd><input type="text" name="" [(ngModel)]="Name" id=""></dd>
+
+    <dt>Price</dt>
+    <dd><input type="text" name="" [(ngModel)]="Price" id=""></dd>
+
+    <dt>Stock Availability</dt>
+    <dd>
+      <input type="radio" name="Stock" value="Available" [(ngModel)]="IsInStock"> Yes
+      <input type="radio" name="Stock" value="Not Available" [(ngModel)]="IsInStock"> No
+    </dd>
+
+    <dt>Shipped to</dt>
+    <dd>
+      <select [(ngModel)]="ShippingInfo">
+        <option>Hyderabad</option>
+        <option>Bangalore</option>
+      </select>
+
+    </dd>
+  </dl>
+</div>
+
+<!--Print the component data after modifications on HTML -->
+<div>
+  <h2>Product Details</h2>
+  <dl>
+    <dt>Name</dt>
+    <dd>{{Name}}</dd>
+
+    <dt>Price</dt>
+    <dd>{{Price}}</dd>
+
+    <dt>Stock Details</dt>
+    <dd>{{IsInStock}}</dd>
+
+    <dt>ShippingInfo</dt>
+    <dd>{{ShippingInfo}}</dd>
+  </dl>
+</div>
+
+
+{{Name}}

@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h2>Product Details</h2>
+  <dl>
+    <dt>Name</dt>
+    <dd>{{product.Name}}</dd>
+
+    <dt>Price</dt>
+    <dd>{{product.Price}}</dd>
+
+    <dt>
+      <button (click)="DisplayClick" class="btn btn-primary">Preview => {{btnText}}</button>
+    </dt>
+
+    <dd>
+      <div *ngIf="isVisible">
+        <img [src]="product.Photo" width="200" height="200" alt="Iphone Image">
+      </div>
+    </dd>
+
+  </dl>
+
+</div>
