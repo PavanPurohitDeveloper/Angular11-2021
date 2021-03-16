@@ -14,6 +14,7 @@ export class IfdemoComponent implements OnInit {
 
   public isVisible: boolean = false;
   public btnText = 'Show';
+  public isActive: boolean = false;
 
   public product = {
 
@@ -22,6 +23,7 @@ export class IfdemoComponent implements OnInit {
     Photo: 'assets/iphone.jpg'
   }
 
+  //once user click on button this function is called.
   public DisplayClick() {
 
     this.isVisible = (this.isVisible == false) ? true : false;

@@ -9,15 +9,20 @@
     <dd>{{product.Price}}</dd>
 
     <dt>
-      <button (click)="DisplayClick" class="btn btn-primary">Preview => {{btnText}}</button>
+      <button (click)="DisplayClick()" class="btn btn-primary">Preview => {{btnText}}</button>
     </dt>
 
     <dd>
       <div *ngIf="isVisible">
-        <img [src]="product.Photo" width="200" height="200" alt="Iphone Image">
+        <img [src]="product.Photo" width="400" height="400" alt="Iphone Image">
       </div>
     </dd>
-
   </dl>
+
+  <!-- *ngIf else example ..template reference variable ng-template-->
+  <div *ngIf="isActive; then firsttemplate; else secondtemplate"></div>
+  <ng-template #firsttemplate>I am from First Container</ng-template>
+  <ng-template #secondtemplate>I am from Second Container</ng-template>
+
 
 </div>
