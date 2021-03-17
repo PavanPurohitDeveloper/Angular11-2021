@@ -17,6 +17,6 @@ import { FordemoComponent } from './fordemo/fordemo.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [IfdemoComponent]
+  bootstrap: [FordemoComponent]
 })
 export class AppModule { }

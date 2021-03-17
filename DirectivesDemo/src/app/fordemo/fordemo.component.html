@@ -1,14 +1,20 @@
-<div>
-  <h2>Product List</h2>
+<div class="container">
+  <h2>Product List-1</h2>
   <ol>
+    <!-- normal way printing the data..
+      <li>{{products[0]}}</li>
+      <li>{{products[1]}}</li>
+      <li>{{products[2]}}</li>
+      <li>{{products[3]}}</li>
+    -->
     <li *ngFor="let item of products">{{item}}</li>
   </ol>
 
   <h2>Product List-2</h2>
   <ol>
+    <!--<li *ngFor="let item of data">{{item}}</li> it prints only Object -->
     <!--<li *ngFor="let item of data">{{item|json}}</li> -->
-    <li *ngFor="let item of data">
-      {{item.category}}
+    <li *ngFor="let item of data">{{item.category}}
       <ul>
         <li *ngFor="let x of item.products">{{x}}</li>
       </ul>
@@ -16,14 +22,41 @@
   </ol>
 
   <h2>Product List-3</h2>
+  <!--Emit style abbreviation -->
+  <table class="table table-hover">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Preview</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of Items">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name}}</td>
+        <td>{{item.Price}}</td>
+        <td>
+          <img [src]="item.Image" height="70" width="70" class="image-thumbnail" alt="Product">
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 
+  <!--Generally Each and every item is going to be one card1-->
   <h2>Product List-4 By using cards</h2>
   <div class="card-deck text-center">
-    <div class="card">
-      <div class="card-header"></div>
-      <div class="card-body"></div>
-      <div class="card-footer"></div>
+    <div class="card" *ngFor="let product of Items">
+      <div class="card-header">
+        <h4>#{{product.Id}} - {{product.Name}}</h4>
+      </div>
+      <div class="card-body">
+        <img [src]="product.Image" alt="Product" width="200" height="200" class="image-thumbnail">
+      </div>
+      <div class="card-footer">
+        <h4> &#8377;{{product.Price}}</h4>
+      </div>
     </div>
   </div>
 
