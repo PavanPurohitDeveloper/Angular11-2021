@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { IfdemoComponent } from './ifdemo/ifdemo.component';
 import { FordemoComponent } from './fordemo/fordemo.component';
 import { TrackByComponent } from './track-by/track-by.component';
+import { ArrayIndexComponent } from './array-index/array-index.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     IfdemoComponent,
     FordemoComponent,
-    TrackByComponent
+    TrackByComponent,
+    ArrayIndexComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [TrackByComponent]
+  bootstrap: [ArrayIndexComponent]
 })
 export class AppModule { }
