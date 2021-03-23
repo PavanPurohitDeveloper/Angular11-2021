@@ -1,0 +1,27 @@
+<h2>track-by feature!</h2>
+<div class="container">
+  <div class="form-group">
+    <h2>Product List</h2>
+
+    <table class="table table-hover">
+      <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Preview</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor=" let item of product; trackBy:TrackById">
+          <td>{{item.Name}}</td>
+          <td>{{item.Price}}</td>
+          <td>
+            <img [src]=" item.Image" alt="Image" width="70" height="70" class="img-thumbnail">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button (click)="AddProduct()" class="btn btn-primary">Add New Product</button>
+
+</div>
