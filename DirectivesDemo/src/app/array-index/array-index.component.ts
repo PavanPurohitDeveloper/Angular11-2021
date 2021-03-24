@@ -15,7 +15,7 @@ export class ArrayIndexComponent {
   public txtName: string | undefined;
   public txtPrice: string | undefined;
 
-  public NewProduct = {
+  public NewProduct: any = {
     Name: '',
     Price: 0
   };

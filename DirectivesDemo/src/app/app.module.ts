@@ -8,6 +8,9 @@ import { FordemoComponent } from './fordemo/fordemo.component';
 import { TrackByComponent } from './track-by/track-by.component';
 import { ArrayIndexComponent } from './array-index/array-index.component';
 import { FormsModule } from '@angular/forms';
+import { SwitchdemoComponent } from './switchdemo/switchdemo.component';
+import { SearchComponent } from './search/search.component';
+import { ConditionComponent } from './condition/condition.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { FormsModule } from '@angular/forms';
     IfdemoComponent,
     FordemoComponent,
     TrackByComponent,
-    ArrayIndexComponent
+    ArrayIndexComponent,
+    SwitchdemoComponent,
+    SearchComponent,
+    ConditionComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +29,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
-  bootstrap: [ArrayIndexComponent]
+  bootstrap: [ConditionComponent]
 })
 export class AppModule { }

@@ -1,0 +1,38 @@
+<h2>search and Sorting how it works!</h2>
+
+<div class="container">
+  <h4>ngFor Search and Sort</h4>
+  <input type="text" placeholder="Enter to Search" [(ngModel)]="searchString">
+  <input type="button" value="Search" (click)="onSearchClick()">
+  <br>
+
+  Sort:
+  <select [(ngModel)]="sortColumn">
+    <option>empId</option>
+    <option>empName</option>
+    <option>salary</option>
+  </select>
+
+  <select [(ngModel)]="sortrder">
+    <option value="1">Ascending Order</option>
+    <option value="-1">Descending Order</option>
+  </select>
+
+  <input type="button" value="Sort" (Click)="onSortClick()">
+  <br>
+
+  <table class="table" border="1">
+    <tr>
+      <th>EmpId</th>
+      <th>EmpName</th>
+      <th>EmpSalary</th>
+    </tr>
+
+    <tr *ngFor="let emp of employees; let i=index;">
+      <td>{{emp.empId}}</td>>
+      <td>{{emp.empName}}</td>>
+      <td>{{emp.salary}}</td>>
+    </tr>
+
+  </table>
+</div>
