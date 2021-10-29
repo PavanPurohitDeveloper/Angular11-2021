@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        div {
+            border: 2px solid green;
+            height: 350px;
+            width: 350px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>JavaScript Mouse Events</h1>
+    <div id="div1" onmouseover="F1()" onmouseout="F2()">
+    </div>
+
+    <script>
+        function F1() {
+            console.log('mouse over');
+            var obj = document.getElementById('div1');
+            obj.style.backgroundColor = "pink";
+        }
+        function F2() {
+            console.log('mouse out');
+            var obj = document.getElementById('div1');
+            obj.style.backgroundColor = 'gray';
+        }
+    </script>
+</body>
+
+</html>

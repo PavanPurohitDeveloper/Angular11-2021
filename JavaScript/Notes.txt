@@ -1,57 +1,96 @@
 JavaScript:
-- HTML is used for describe the content on the browser
+- HTML is used for describing the content on the browser
 - CSS is used for Styling the HTML elements.
 - Both HTML, CSS and Bootstrap are mainly used to design static pages.
-- JS is used to prepare dynamic web pages.
-- It is scripting language which will be used to manipulate the DOM at runtime, by chnaging the behavior of
- the elements and also used to ass/remove the HTML elements.
+- JS is used to prepare dynamic web pages. generate the content dynamically.
+- It is scripting language which will be used to manipulate the DOM (Document Object Model) at runtime, by chnaging the behavior of
+ the elements and also used to add/remove the HTML elements.
 
 documentation to learn: https://developer.mozilla.org/en-US/docs/Learn/JavaScript
 
 - Important Notes:
-    - Including the script by using <script> tag.. Inside the body tag is best option to include script tag.
+    - Whenever HTML is loaded if you want to apply some styles then we should go with CSS. 
+    - JavaScript needs to be executed after loading the HTML and CSS. 
+    1. Including the script by using <script> tag.. Inside the body tag is best option compare with head tag to include script tag.
         <script>
             code..
         </script>
-    - Create the variables  by using var
+        
+    2. Create the variables  by using "var"/"let"/"const"
         var x=10;
         var y="welcome"
-    - Identify the elements from the DOM.
+        x = 22.3f;
+        x = 123.45;
+        x = true;
+
+    3. Identify the elements from the DOM.
         document.getElementById()
         document.getElementByName()
         document.getElementByClassName() ..etc
-    - Creating Functions
-        is a reusable block of code.
-        function <functionName>(arguments){
+
+    4. Creating Functions
+        is a reusable block of code which is getting executed again and again.
+        Arrow function also available.
+        function <functionName>(arguments) {
 
         }
-     - Events and Event Handler(Functions)
-        Event is an action performed by User. That action can handle by  Event Handler i.e. using Functions  
-            <button onclick="funName()" >Click Me</button>
-     - Type casting  (Optional)
 
- ### Which Javascript version you using?
+    5. Events and Event Handler(Functions)
+        Event is an action performed by the User. That action can handle by  Event Handler with the help of Functions.
+            <button onclick="funName()" >Click Me</button>
+
+     6. Type casting  (Optional)
+        var x = 10;
+        var y = 20;
+        var z = x + y;  //30
+
+ ### Which version of Javascript you are using?
 ------------------------------------
 ECMAScript latest version - ES6
 JS is not having any version numbers..   
 
 Add the below extensions in Visual studio:
 -------------------------------------------
-Angular Snippets (Version 11)
-HTML CSS Support
-open in browser
-Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
+> Angular Snippets (Version 11)
+> HTML CSS Support
+> open in browser
+> Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
 
 DOM - Document Object Model.
 ----------------------------
+Once the HTML document is getting executed and rendered on browser ( run on the browser), Every element will be converted to DOM.
 For every HTML element at runtime, browser it creates an Object
 Collection of Objects which are created for every HTML element.
 
-innerText: will be used to append some context to the HTML elements at runtime, 
+innerText: will be used to append some content to the HTML elements at runtime, 
            but innerText property will not identify HTML tags in the content.
 
-innerHTML:- will be used to append some context to the HTML elements at runtime, 
+innerHTML:- will be used to append some content to the HTML elements at runtime, 
             but innerHTML property will identify the HTML tags which are presented in the content.
+
+
+<label> is a tag where we can display the text.
+
+>> There are 3 types of buttons
+    1. normal "button": 
+    2. "submit" button : is used to submit something to the server. 
+                Make sure All these input elements should be wrapped with the <form> tag. If we are not having <form> tag then "submit" button will not work.
+    3. "reset" button: 
+
+>>> <label for:  Highliting the Password text box..
+            The main advantage of "for" attribute with <label> tag is - whatever the id we are having for the input element, if we can give the same Id then automatically if user click on this particular label then corresponding input element is focussed.
+       Example:
+        <label for="pwd">Enter Passpord: </label>
+        <input type="password" name="pwd" id="pwd">
+
+Developer Tools:
+    1. Elements tab: what are all the elements having in the browser, It will give you clear idea. contains the HTML elements structure.
+    2. Console tab: is mainly used to get Error messages or anything you can print. to diplay normal messages also.
+    3. Sources tab: is used for debugging code purpose.
+        CTRL+P -- gives you all the list of files.
+        Open the file and put breakpoint
+        press "F10": line by line execution
+    3. Network tab: 
 
 Javascript Objects:
 - Object
