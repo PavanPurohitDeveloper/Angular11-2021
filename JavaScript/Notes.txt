@@ -92,29 +92,44 @@ Developer Tools:
         press "F10": line by line execution
     3. Network tab: 
 
+ Mouse Events:
+ 1. onmouseover
+ 2. onmouseout   
+
+ Keyboard Events:
+ Ex: User will enter something in textbox and display the text in lowercase and upper case.
+    whenever you type any data I want to display something text in lower case or uppercase.
+ 1. onkeypress
+ 2. onkeyup
+ 3. onkeydown
+
 Javascript Objects:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - Object
 - string
 - number
-- array
+- array  ( Map also comes under the array)
 - json
 
 Array:
 - It is a collection of items together.
 - In JS, we dont have typesaftey so that in an array we can have any type of elements,
-- Every element is associated with an index and always index will starts from "Zero".
+- Every elements is associated with an index and always index will starts from "Zero".
 - In JS Array is a built in object and it provides different methods and properties.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-- push
-- pop
-- splice
-- slice
+-> push  : Adds one or more elements to the end of an array, and returns the new length of the array.
+-> pop   : Removes the last element from an array and returns that element. 
+           Which is always going to remove last element
+-> splice
+-> slice
 
 Conditional statements:
 - simple if
 - if else
 - Nested if else
-
+- if else ladder
+- switch
 
 Loops:
 - for Loops
@@ -124,7 +139,20 @@ Loops:
 - for..in
 - for..of
 
-slice() ==> It will return a copy of an array with new elements. 
+splice(index, how_many_elements_to_remove) ==> 
+            It will return a new copy of an array with new elements..from this index onwards, I want to remove elements..
+            I want to remove only 4th element or 5th element.. In that particular position It will add the elements also.
+            Ex: [10, 20, 30, 40 , 50]
+            splice(1,2, 15, 16)  ==> [10, 15, 16, 40, 50]
+            *** splice() is not only used to remove the elements but also used to add the elements.
+
+            var BR = Splice(1,2,15,16);
+            var list1 = document.getElementById();
+            for(var i=0; i < BR.length; i++) {
+                list.innerHTML = "<li>" + BR[i] + "</li>";
+            }
+
+slice() ==> It will return a new copy of an array with new elements. 
             we can use slice to get part of the array. one piece. slice means small piece.
             slice(begin, end)
 	        returns from begin index to end-1 index
@@ -134,11 +162,7 @@ slice() ==> It will return a copy of an array with new elements.
             var num1=numbers.slice(2,5) --> [30,40,50]
             var num2=numbers.slice() --> returns [10,20,30,40,50,60,70,80]
 
-
-splice() ==> It will return a copy of an array with new elements..from this index onwards, I want to remove elements
-            I want to remove only 4th element or 5th element.. In that particular position It will add the elements also.
-            Ex: [10, 20, 30, 40 , 50]
-            splice(1,2, 15, 16)
+            var BR =  slice(1, 3);
 
 Arrays and JSON:
 - Arrays will store the data based on index, For every element we have index.
