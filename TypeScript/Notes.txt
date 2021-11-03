@@ -12,10 +12,10 @@ TypeScript:
 - To install typescript we use a command "npm install -g typescript" Or "npm install -g typescript@Version"
 - To verify the typescript version "tsc -v"  -- Version 4.1.5
 - TypeScript will never understand by the browser.
-- The moment you run >tsc myScript.ts, It will create a myScript.js file automatically
-- It was introduced by "Andrew Heze;sibeg" who invented C# .Net from Microsoft
+- The moment you run >tsc myScript.ts, It will create a myScript.js file automatically.
+- It was introduced by "Andrew Hezelsibeg" who invented "C# .Net" from Microsoft.
 - Will compile typescript inorder to generate the javascript, to get the javascript we use a command "tsc <file_name.ts>"
-- If we have multiple typescript file, you want to generate a single *.js file 
+- If we are having multiple typescript file, you want to generate a single *.js file 
     > tsc file.js file1.ts file2.ts file3.ts
     ( This will happen internally in angular application).. automatically all the *.ts files will be converted into single *.js file.
 
@@ -25,7 +25,7 @@ Features of TypeScript:
 - Classes
 - Modules
 - interfaces
-- OOPS
+- OOPS  ( Inheritance, Encapsualtion, Abstarction, Polymorphism etc)
 - Generics
 - Optional and Default parameters and rest parameters.
 
@@ -33,17 +33,27 @@ DataTypes in Typescript:
 - It is used to specify what type of data a variable can hold.
     - Primitive   = simple types
         - number : 
-            can be anything integer value, floating values, double value, decimal value.. int, float, char, decimal, double, octal, dexa decimal values we can store etc.
+            can be anything integer value, floating values, double value, decimal value.. int, float, char ( because char will store ascii value 0 to 256 ), decimal, double, octal, hexa decimal values we can store etc.
+
         - string : we can use double quotes "" or  single quotes ''  or backticks ``  ( "Srikanth" / 'Srikanth'  /  `Srikanth` )
-        - boolean : true or false values.       
+
+        - boolean : true or false values.    
+
     - Non-Primitive  = Complex types
         - Arrays  :  we can declare -- var ar:number[] = [10, 20];   /  var ar:Array<number> = [];
+                    Once it is specified number[], you can have number only. you cannot have elements of different types.
+				    var ar: number[] = [10, 20, 'Sriknath']; //It will give error.
+			        you can always store with that particular type.	
+        
         - Classes
+        
         - interfaces
+        
         - Tuple : is also kind of Array only.
                   var DOB:[number, string, number] = [22, "Jul", 1990];
                   var ar: number[] = [10, 20, 30];
                   var dob: [number, string, number] = [22, "25", 90];
+        
         - Enumeration (Enums): 
             enum color{
                 Green, Red, Blue
@@ -52,17 +62,22 @@ DataTypes in Typescript:
 
 Note: To create any variable in typescript we use "var/let/const".
 
-var Vs let:
-- var is function scoped and let is blocked scoped.. we cannot use it another block.
-- var can be re-declared for any number of times, but once if we created a let variable can't be re-declare in that block.
-- In angular mostly will be using "let" only.
-- Types are initialized even if we dont specify type also.
+### var Vs let:
+-> "var" is function scoped ( within the function you can make use of anywhere) and
+   "let" is blocked scoped.. we cannot use it another block.
+
+-> var can be re-declared for any number of times, but once if we created a let variable can't be re-declare in that block.
+
+-> In angular mostly will be using "let" only.
+
+-> By default, Types are initialized ( Implicit typing) even if we dont specify type also.
      var marks = 33;
-    var result: string = "pass";
+     var result: string = "pass";
 
    // To generate the *.js file
    D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>tsc example1.ts
 
+    //To execute the JS file.. using NodeJS
     D:\MyDevelopment\Angular11\Feb-6AM\TypeScript>node example1.js
     Inside the block fail
     Outside of the block fail
@@ -71,6 +86,9 @@ var Vs let:
     let marks: Array<number> = [45, 67, 89];
     var courses: string[] = ["HTML", "CSS", "Javascript", "JQuery", "ANgular"];
 - 
+
+Enumeration:
+> enum Result { Pass = 1, Fail = -1, Promoted = 0 };
 
 Class:
 - It is a collection of data members and member functions.

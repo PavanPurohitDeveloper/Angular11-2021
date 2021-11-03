@@ -10,7 +10,7 @@ class Employee {
 */
 
 /*
-function Greet() {
+function Greet() : void {
     var name: string = "Srikanth";
     console.log('Good Morning ' + name);
 }

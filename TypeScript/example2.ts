@@ -1,5 +1,5 @@
 //enumeration
-enum Result { Pass = 1, Fail = -1, Promoted = 0 }
+enum Result { Pass = 1, Fail = -1, Promoted = 0 };
 
 function Student() {
 
@@ -12,14 +12,16 @@ function Student() {
     let marks: Array<number> = [45, 67, 89];
     let total = 0;
 
+    //for of loop
     for (let i of marks) {
-        total += i;
+        total += i; // we get total values from here
     }
 
     let average: number = total / 3.0;
 
     //creating array in different way
     var courses: string[] = ["HTML", "CSS", "Javascript", "JQuery", "ANgular"];
+
     //tuple
     let dateOfBirth: [number, string, number] = [22, "Jul", 19889];
 
