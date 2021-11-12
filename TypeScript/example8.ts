@@ -40,9 +40,10 @@ class Lecturer1 extends Employee2 {
 
 }
 
-//Hierarchical Inheritance
+//Hierarchical Inheritance -- Multiple child classes from single Parent Class.
 class Admin1 extends Employee2 {
 
+    //implement methods
     calculateSalary(hours: number): void {
         let salary: number;
         salary = this.BasicSalary + hours + (this.BasicSalary * hours) * 1.8 / 100;
@@ -50,6 +51,7 @@ class Admin1 extends Employee2 {
     }
 
     LabNumber: string;
+    //constructor in child level
     constructor(id: number, name: string, salary: number, labNumber: string) {
         super(id, name, salary);
         this.LabNumber = labNumber
@@ -66,8 +68,10 @@ function Test(x: number) {
 
     let emp: Employee2;
     if (x == 1) {
+        //create an Object for Lecturer.
         emp = new Lecturer1(101, 'Srikanth', 12345, 'Angular');
     } else if (x == 2) {
+        //create an Object for Admin.
         emp = new Admin1(102, 'Balaji', 8000, 'ANG001');
     }
     emp.calculateSalary(8);
@@ -78,9 +82,10 @@ Test(1);
 
 /*
 let emp2: Employee2;
+//create a Child class object
 emp2 = new Lecturer1(101, 'Srikanth', 12345, 'Angular');
 emp2 = new Admin1(102, 'Balaji', 8000, 'ANG001');
-emp2.calculateSalary(8);
+emp2.calculateSalary(8); //it will print Admin salary
 emp2.Display();
 */
 

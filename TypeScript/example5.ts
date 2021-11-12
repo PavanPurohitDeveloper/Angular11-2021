@@ -1,12 +1,15 @@
 class Address {
 
+    //properties must be in camel case we following
     AddressId: number;
     Address: string;
     City: string;
     State: string;
     Country: string;
 
+    //attribute names will be in the lowercase.
     constructor(AddressId: number, Address: string, City: string, State: string, Country: string) {
+        //Initialize it
         this.AddressId = AddressId;
         this.Address = Address;
         this.City = City;
@@ -47,10 +50,10 @@ class CustomerNew {
 }
 
 var addr: Address = new Address(10, '8-1-221', 'Hyderabad', 'TS', 'India');
-var custNew: CustomerNew = new CustomerNew(101, 'Srikanth', 1200, addr);
+var custNew: CustomerNew = new CustomerNew(101, 'Srikanth', 12000, addr);
 custNew.Deposit(1000);
 custNew.Display();
 
-var custNew1: CustomerNew = new CustomerNew(102, 'Pavan', 1200, addr);
+var custNew1: CustomerNew = new CustomerNew(102, 'Pavan', 30000, addr);
 custNew.Deposit(5000);
 custNew1.Display();

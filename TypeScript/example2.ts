@@ -1,6 +1,7 @@
 //enumeration
 enum Result { Pass = 1, Fail = -1, Promoted = 0 };
 
+//This is a class..look and feel it is a function
 function Student() {
 
     //members
@@ -28,7 +29,7 @@ function Student() {
     //using enumeration
     let result: Result = Result.Pass;
 
-    //function with expression
+    //function with expression.. anonymous function
     this.result = function () {
         if (average >= 35) {
             return Result.Pass;
@@ -40,5 +41,5 @@ function Student() {
 
 //object declare
 var student = new Student();
-console.log(student.result);
+console.log(student.result());
 //console.log(Result[student.result]);

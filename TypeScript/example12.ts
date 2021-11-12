@@ -1,6 +1,6 @@
 class keyValuePair<T, U> {
 
-    private key: T; //T means any
+    private key: T; //T means any - generic type.. T can be anything - string, number etc.
     private value: U; //U means any
 
     //method

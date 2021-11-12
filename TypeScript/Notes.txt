@@ -94,18 +94,23 @@ Class:
 - It is a collection of data members and member functions.
     data members - to strore the data
     member functions - to write business logic
-- Object: An Object is an instance of class.
+Object: An Object is an instance of class.
     Physical existence of object.
+
 - OOPS is providing two features    
     - security
     - Reusability
-- Any PL, if it is an OOPS it should follow 4 principles
-    - Encapsualtion: Binding everything in class ( writing everything inside a class)
-    - Abstraction: Hiding the implementation and provide security
-    - Poly Morphsim: One to many behaviors.. same function with different parameters.
-    - Inheritance: Acquiring the properties from one to another.
 
-Optional Parameters: These will be created with "?", If we have an optional parameter no need to pass value and its optional. 
+- Any Programming Language, if it is an OOPS it should follow 4 principles:
+    - Encapsualtion:   Binding everything in class ( writing everything inside a class)
+    - Abstraction:     Hiding the implementation and provide the security
+    - Poly Morphsim:   One to many behaviors.. same function with different parameters.
+    - Inheritance:     Acquiring the properties from one to another.
+
+>>> Method overloading is not possible in TypeScript.
+
+Optional Parameters (?) : 
+- These will be created - Parameter with "?", If we have an optional parameter no need to pass value and its optional. 
 - we can pass default value but it should not be optional parameter.
 - Every optional/default parameter should be written at the end of the parameter list.
 - we can override the value of default parameter so that it will asign with that value else it will display default value.
@@ -132,10 +137,10 @@ constructor(custId: number, custName: string, custBal: number, customerSpouse: s
  - Overriding is not supported.
 
 Access Modifier:
-It gives the scope the member of the class.
-- In TS we have 3 types:
+It gives the scope of the members of the class. It gives the access for the class members.
+- In TypeScript we have 3 types:
     - private: used only within the class
-    - protected: used in the same class and in the child classes.
+    - protected: used in the same class and in the child classes. ( Base class is required and followed by Child class )
     - public : we can use it any where
 - Default access modifier is "public"
 - Acess modifier should be given only for class members, not for the class.
@@ -143,18 +148,22 @@ It gives the scope the member of the class.
 Inheritance:
 - It is a process of acquiring the properties form one class to another class.
 - In TS also we have all different tyoes of Inheritance.
-    - Single Inheritance: Single Base class + Single Derived class
-    - Multi Level: Different level of classes
+    - Single Inheritance: Single Base class + Single Derived class    -- Very rare case its used
+    - Multi Level: Different levels of classes
     - Heirarichal: Single Parent class + Multiple child classes.
     - Multiple: Multiple parents + Single Child
-    - Hybrid: combination of any two
+    - Hybrid: combination of any two   -- NOt at all used
 - The gives which gives properties is called Parent/Base/Super class.
 - The class which acquire the properties is called Child/Derived/Sub class
-- In TS to provide the inheritance between the classes we use "extends"
+- In TypeScript to provide the inheritance between the classes we use "extends"
 - Once if parent class is having constructor, in child class we must call it.
-
     
 - We always create the Object for child classes not to Base class/Parent class.
+
+Compile Polymorphism: Same function with different parameters... this is also called Methdo overloading. 
+                      overloading is not possible in JavaScript so we use optional parameters and default parameters.
+
+RunTime Polymorphism: Overriding is something, whatever functionality we have in Base level will be overiding that functionality with derived. This is also not possible in JavaScript.. so we Abstract class and Methods.
 
 Abstract class and Methods:
 - A class for which we have an incomplete functionality, which may be provided in child classes.
@@ -164,7 +173,8 @@ Abstract class and Methods:
 - Abstract methods from abstract class we must provide implementation in child class.
 
 Interfaces:
-- contains only abstract methods. contains only definitions and does not contain any implementation.
+- Interfaces contains only abstract methods. contains only definitions and does not contain any implementation.
+- 90% time ..Mostly we go with Interfaces..
 - It is a contract between itself and it's derived class. The contract is interface provides definitions and derived class must provide implementations.
 - To create we use "interface" keyword.
 - By default everything is "public abstract"

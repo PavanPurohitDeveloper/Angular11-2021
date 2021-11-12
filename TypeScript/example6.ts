@@ -20,6 +20,17 @@ class Customer1 {
         this.customerSpouse = customerSpouse;
     }
 
+    /**
+     constructor(custId: number, custName: string, custBal: number, customerSpouse?: string) {
+        //this - is an object of current class
+        this.customerId = custId;
+        this.customerName = custName;
+        this.customerBal = custBal;
+        this.customerSpouse = customerSpouse;
+    }
+     */
+
+
     //Function - returns a value //Method - It contains return type as void
     /*
     Display() {
