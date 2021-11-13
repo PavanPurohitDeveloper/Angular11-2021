@@ -1,0 +1,182 @@
+#######################################################################################
+To startup Angular:   Below is the environment setup:
+-------------------------------------------------------
+1. NodeJS must be installed
+	> node -v   //v14.15.5
+2. NPM is required. NPM will be downloaded automatically once NodeJS is installed.
+	> npm -v    //6.14.11
+3. TypeScript must be installed
+	> npm install -g typescript
+	> tsc -v	//Version 4.1.5
+4. Angular CLI must be installed
+	> npm install -g @angular/cli
+	> ng version   //11.2.3
+
+Update the angular older version to Angular11:
+-----------------------------------------------
+1. Uninstall Angular CLI.
+	> npm uninstall -g @angular/cli
+2. Clear the cache
+	> npm cache clear --force
+	> npm cache verify
+3. Restart the computer
+4. Install the latest Angular CLI
+	> npm install -g @angular/cli@latest
+#######################################################################################
+
+### Environment Setup for Angular 11
+-------------------------------------
+If it is an Angular JS/jQuery library we are integrated with <script> tag.
+If it is Angular we must have some setup inorder to build and run the application.
+- NodeJS
+- NPM(Node JS Package Manager)
+- Angular CLI(Commmand Line Interface)
+- Typescript
+- Visual Studio Code(IDE)
+
+Node JS:
+--------
+- It is a server which relays on browser and takes the responsibility to execute Javascript.
+- To install node js we click on following link - https://nodejs.org/en/
+- To verify NodeJS was installed or not we use "node -v"
+
+> node -v
+v14.15.5
+
+NPM(Node JS Package Manager):
+-------------------------------
+NPM will get installed automatically once Node JS is installed.
+once you installed Node JS which will takes responsibility to get the packages from NPM.
+https://www.npmjs.com/package/
+
+> npm -v
+6.14.11
+
+Typescript:
+------------
+Typescript is a scripting/programming language. pure Object oriented programming..
+typescript compiler is required.
+typescript converts into javascript so browser can understand and run..
+
+> npm install -g typescript   //-g global installation
+> tsc -v
+Version 4.1.5
+
+Angular CLI(Commmand Line Interface):
+-------------------------------------
+> npm install -g @angular/cli  //It will give you latest version
+
+//to verify Angular version..
+> ng version
+stable version is - 11.2.0
+
+Update the angular older version to Angular 11:
+-----------------------------------------------
+Note: To update the version of Angular, If we already have it in our machine we use below commands
+> Uninstall Angular CLI 	 ==> npm uninstall -g @angular/cli
+> Clear the Cache   		 ==> npm cache clear --force
+							 ==> npm verify cache
+> Restart the computer
+> Install the latest version ==> npm install -g @angular/cli
+
+### Angular Architecture:
+--------------------------
+https://angular.io/guide/architecture
+Every angular appln is made up with the help of Components. 
+Everything is Component.
+Component is nothing but its reusable interface which comes with some business logic.
+
+### Creating First Application:
+-----------------------------
+Open the command prompt from where we want to create the application..
+
+D:\MyDevelopment\Angular11\Feb-6AM\MyFirstApp...
+
+> ng new MyFirstApp  --> ng new <nameOfApplication>
+Would you like to add Angular routing? (y/N) : Y
+Which style sheet format ?: CSS
+
+Execute the App --> ng serve(or) ng s (or) ng serve --open(or) ng s -o
+> ng s -o -> we use this option often..
+
+### How to open the project in visual studio code?
+----------------------------------------------------
+Open command prompt.
+cd D:\MyDevelopment\Angular11\Feb-6AM\MyFirstApp>code .
+
+### To install the bootstrap?
+------------------------------
+https://www.npmjs.com/package/bootstrap
+> npm i bootstrap
+
+### Main Building Blocks of Angular?
+-------------------------------------
+https://angular.io/guide/architecture
+
+1. Component  
+2. Template
+3. Date Binding
+4. Directives
+5. Services
+6. Dependency Injection
+7. Pipes
+8. Routing
+9. Modules
+
+1. Component: is nothing but a typescript class which is used to maintain the state of the component.
+	*** state - means currently available data.
+	*** Component is ts(typescript) code.. Template is HTML code
+	Component is having 2 parts :
+		ts file - is having business logic
+		template  -- is having HTML to display
+
+2. Template: is nothing but HTML File to display the data to the user.
+	Component and Template both are inter related to each other.
+	Component will contain some data and that data will be displayed in Template. 
+	From the Template, user will enter some data and that data need to shared to the Component.
+	Every component will have Template.
+
+3. Date Binding: is a mechanism which will be used to share the data from component to template and vice versa.
+
+4. Directives: are used in the template to manipulate the DOM(Document Object Model).
+				DOM manipulation - to convert from static DOM to dynamic DOM.. using Directives..
+								   using ngFor, ngIf, ngSwitch, ngTemplate etc
+
+5. Services: is a reusable code which used to get the data from the servers and share it to components.
+
+6. Dependency Injection: It is a Design pattern used to Inject the data from service to component class.
+						 Design pattern is solution for the commonly addresing problem
+
+7. Pipes: used to transform the data before it displays in the template.
+		  From database I am getting salary = 1200 .. in DB we cannot store currency symbol.
+		  before it is displaying to template, I will transform the data.
+
+8. Routing: it is a concept of page navigation. To Navigate from one page to another page within appln.
+		    whenver you want to develop/creating Single Page Appln we should go for routing mechanism.
+
+9. Modules: which improves the Modularity. grouping of related items belongs to same kind of functionality.
+	Ex: To build the appln, first Identify the modules.
+	based on the business we identify modules - Student, Trainer, Admin
+	By default we get "AppComponent", "AppModule".. without this you cant write code..
+
+### How services and component communication happen ?
+-------------------------------------------------------
+> using Dependency Injection
+
+### What is Metadata ?
+------------------------
+*** Metadata will contain information about component. This component is mapped with which Template..
+	Metadata will be stored in a file. It gives you the relations.
+	
+	folder: src/app/app.component.ts
+	
+	Ex: app.component.ts
+	import{Component} from '@angular/core';
+	
+	@Component({
+	 selector: 'app-root',
+	 templateUrl: './app.component.html',
+	 styleUrls: ['./app.component.css']
+	})
+	
+	export class AppComponent {title = 'MyFirstApp'}
