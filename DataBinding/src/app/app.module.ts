@@ -18,6 +18,7 @@ import { Databinding2Component } from './databinding2/databinding2.component';
     FormsModule
   ],
   providers: [],
+  //bootstrap: [DatabindingComponent, Databinding2Component]
   bootstrap: [Databinding2Component]
 })
 export class AppModule { }

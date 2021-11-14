@@ -4,6 +4,7 @@
 
   <dl>
     <dt>Name</dt>
+    <!-- <dd><input type="text" name="" [(value)]="Name" id=""></dd> -->
     <dd><input type="text" name="" [(ngModel)]="Name" id=""></dd>
 
     <dt>Price</dt>
@@ -21,14 +22,14 @@
         <option>Hyderabad</option>
         <option>Bangalore</option>
       </select>
-
     </dd>
+
   </dl>
 </div>
 
 <!--Print the component data after modifications on HTML -->
 <div>
-  <h2>Product Details</h2>
+  <h2>Product Details On Component is getting updated once the HTML is modified</h2>
   <dl>
     <dt>Name</dt>
     <dd>{{Name}}</dd>

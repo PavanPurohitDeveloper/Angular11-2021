@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Databinding2Component implements OnInit {
 
-  public Name = "IPhone";
+  public Name = "IPhone"; //these are default values
   public Price = 45874;
   public ShippingInfo = "Hyderabad";
   public IsInStock = true;

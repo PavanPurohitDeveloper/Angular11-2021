@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabindingComponent {
 
+  //Creating a Product Information
   public product = {
     Name: 'Iphone',
     Price: 45000,
     Qty: 3,
     mfd: new Date('2021/01/20'),
     InStock: true,
-    Url: 'https://flipkart.com'
+    Url: 'https://flipkart.com/'
   }
 
 }
