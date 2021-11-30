@@ -1,1 +1,60 @@
-<p>switchdemo works!</p>
+<div class="container">
+  <h2>Product Details</h2>
+  <div>
+    Select View:
+    <select [(ngModel)]="selectedView" class="form-control">
+      <option value="info">Info</option>
+      <option value="summery">Summery</option>
+      <option value="preview">Preview</option>
+    </select>
+  </div>
+  <br>
+  <div class="btn-toolbar">
+    <div class="btn-group">
+      <button (click)="ChooseView($event)" value="info" class="btn btn-info">Product Info</button>
+      <button (click)="ChooseView($event)" value="summery" class="btn btn-danger">Product Summery</button>
+      <button (click)="ChooseView($event)" value="preview" class="btn btn-warning">Product Preview</button>
+    </div>
+  </div>
+
+  <div [ngSwitch]="selectedView">
+
+    <div *ngSwitchCase="'info'" class="card">
+      <div class="card-header">
+        <h2>{{product.Name}}</h2>
+      </div>
+      <div class="card-body">
+        <dl>
+          <dt>Price</dt>
+          <dd>{{product.Price}}</dd>
+          <dt>Manufactured</dt>
+          <dd>{{product.mfg.toDateString()}}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'summery'" class="card">
+      <div class="card-header">
+        <h2>Summery</h2>
+        <div class="card-body">
+          <!-- <p>{{product.summery}}</p> -->
+          <a href="#" class="card-link">more....</a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'preview'" class="card">
+      <div class="card-header">
+        <h2>Preview</h2>
+      </div>
+      <div class="card-body">
+        <img [src]="product.Photo" width="200" height="200" alt="Iphone Image">
+      </div>
+    </div>
+
+    <div *ngSwitchDefault>
+      <h4>This Default one</h4>
+    </div>
+
+  </div>
+</div>

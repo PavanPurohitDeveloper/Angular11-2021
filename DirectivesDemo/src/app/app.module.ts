@@ -19,9 +19,9 @@ import { ConditionComponent } from './condition/condition.component';
     FordemoComponent,
     TrackByComponent,
     ArrayIndexComponent,
-    SwitchdemoComponent,
     SearchComponent,
-    ConditionComponent
+    ConditionComponent,
+    SwitchdemoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +29,6 @@ import { ConditionComponent } from './condition/condition.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [ConditionComponent]
+  bootstrap: [SwitchdemoComponent]
 })
 export class AppModule { }

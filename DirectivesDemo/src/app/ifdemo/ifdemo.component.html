@@ -3,6 +3,7 @@
   <h2>Product Details</h2>
   <dl>
     <dt>Name</dt>
+    <!-- Interpolation -->
     <dd>{{product.Name}}</dd>
 
     <dt>Price</dt>
@@ -14,6 +15,7 @@
 
     <dd>
       <div *ngIf="isVisible">
+        <!-- property binding -->
         <img [src]="product.Photo" width="400" height="400" alt="Iphone Image">
       </div>
     </dd>
