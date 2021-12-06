@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClassdemoComponent } from './classdemo/classdemo.component';
+import { StyledemoComponent } from './styledemo/styledemo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClassdemoComponent
+    ClassdemoComponent,
+    StyledemoComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,6 @@ import { ClassdemoComponent } from './classdemo/classdemo.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [ClassdemoComponent]
+  bootstrap: [StyledemoComponent]
 })
 export class AppModule { }

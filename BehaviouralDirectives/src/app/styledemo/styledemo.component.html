@@ -1,0 +1,22 @@
+<div class="container">
+  <fieldset>
+    <legend>Apply Effects</legend>
+    <dl>
+      <dt>Fore Color</dt>
+      <dd>
+        <select [(ngModel)]="foreColor">
+          <option value="green">Green</option>
+          <option value="black">Black</option>
+          <option value="red">Red</option>
+        </select>
+      </dd>
+      <dt>Alignment</dt>
+      <dd>
+        <input type="radio" [(ngModel)]="alignment" value="left" name="align" id="">Left
+        <input type="radio" [(ngModel)]="alignment" value="center" name="align" id="">Center
+        <input type="radio" [(ngModel)]="alignment" value="right" name="align" id="">Right
+      </dd>
+    </dl>
+  </fieldset>
+  <h1 [ngStyle]="ApplyEffects()">Naresh I Technologies</h1>
+</div>
