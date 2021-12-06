@@ -1,0 +1,13 @@
+/* These 3 classes (general CSS classes) I wanted to apply for HTML element based on condition. */
+.txtEffects {
+  color: yellow;
+  padding: 20px;
+}
+
+.backEffects {
+  background-color: red;
+}
+
+.border-Effects {
+  border: 5px dotted blue;
+}

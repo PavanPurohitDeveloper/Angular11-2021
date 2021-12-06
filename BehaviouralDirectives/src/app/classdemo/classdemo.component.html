@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- String reference -->
+  <fieldset>
+    <legend>Type Effect Name</legend>
+    <input type="text" [(ngModel)]="effects" placeholder="txtEffects, backEffects,border-Effects" class="form-control">
+  </fieldset>
+  <br>
+  <h2 [ngClass]="effects">Test your css classes</h2>
+
+  <!-- Object reference -->
+  <br><br>
+  <legend>Choose Effect</legend>
+  <ol>
+    <li><input type="checkbox" [(ngModel)]="isBackEffectSelected">Background Effects</li>
+    <li><input type="checkbox" [(ngModel)]="isTextEffectSelected">Text Effects</li>
+    <li><input type="checkbox" [(ngModel)]="isBorderEffectSelected">Border Effects</li>
+  </ol>
+  <br>
+  <!-- Object reference -->
+  <h2
+    [ngClass]="{'txtEffects':isTextEffectSelected,'backEffects':isBackEffectSelected,'border-Effects':isBorderEffectSelected}">
+    Choose Effects from the checkbox</h2>
+</div>

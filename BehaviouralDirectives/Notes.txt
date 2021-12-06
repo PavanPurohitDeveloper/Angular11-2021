@@ -1,0 +1,16 @@
+Behavioural Directives/Attribute Binding:
+- These directives are used to change the DOM by applying styles.
+- These directives can be used as Attributes by using "[]".
+- There are two built in directives
+    - [ngClass]
+    - [ngStyle]
+- [ngClass] binding uses the following reference techniqes like
+    1) string reference 
+        <tag [ngClass]="'classname'"></tag>
+    2) Array reference
+        <tag [ngClass]="['class1','class2',....]"></tag>
+    3) Object reference
+        <tag [ngClass]="{'class1':true,'class2':false}"></tag>
+
+- [ngStyle] binding is used to apply css styles dynemically for HTML elmeents.
+    <tag [ngStyle]="{property:value,...}"></tag>
