@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 style="text-align: center;">Mouseover & Moouseout Example</h1>
+
+  <div class="container" style="border: 1px solid red;padding:10px;">
+    <div class="form-group">
+      <marquee (mouseover)="StopAnimation($event)" (mouseout)="StartAnimation($event)" scrollamount="10">
+        <!-- shift+alt+select(up arrow or down arrow) to enter multiple elements one time -->
+        <div>
+          <img src="assets/iphone.jpg" width="100" height="100" alt="Product">
+          <img src="assets/oneplus.jpg" width="100" height="100" alt="Product">
+          <img src="assets/samsung.jpg" width="100" height="100" alt="Product">
+        </div>
+      </marquee>
+    </div>
+
+    <h2>Mouseover Ad Change</h2>
+    <img (mouseover)="ShowAd1()" [src]="ad" width="600" height="300" (mouseout)="ShowAd2()" src="" alt="">
+  </div>
+
+</div>

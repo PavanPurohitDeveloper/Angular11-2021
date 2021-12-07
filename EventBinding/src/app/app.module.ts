@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { KeyeventdemoComponent } from './keyeventdemo/keyeventdemo.component';
+import { MouseEventsComponent } from './mouse-events/mouse-events.component';
+import { MisceleanouesComponent } from './misceleanoues/misceleanoues.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    KeyeventdemoComponent,
+    MouseEventsComponent,
+    MisceleanouesComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [MouseEventsComponent]
+})
+export class AppModule { }

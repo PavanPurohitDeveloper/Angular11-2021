@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Register Here</h2>
+
+  <div class="form-group">
+    <label for="uname">Username</label>
+    <!-- keyup is an event..whenever user press and release the key then verify the user is there in particular list or not -->
+    <div>
+      <input type="text" id="uname" (keyup)="VerifyUser()" [(ngModel)]="userName" class="form-control">
+      <span>{{msg}}</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <div>
+      <input type="text" (keyup)="VerifyPassword()" (keydown)="VerifyCaps($event)" [(ngModel)]="pwd"
+        class="form-control">
+      <span>{{warn}}</span>
+      <div>
+        <meter min="{{min}}" max="{{max}}" value="{{val}}" low="{{low}}" high="{{high}}"></meter>
+        {{pwdStrength}}
+      </div>
+    </div>
+  </div>
+
+</div>

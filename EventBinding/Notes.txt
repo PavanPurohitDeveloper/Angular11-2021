@@ -1,0 +1,40 @@
+Events:
+- An event is nothing but an action performed by the user.
+- When the event is happend we can handle it by using functions, and we call it as "Event Handlers".
+
+public Insert(){
+    //code
+}
+
+<button (click)="Insert()"></button>
+
+Examples:
+    - Change
+    - Mouse Events
+        - mouseover
+        - mouseout
+        - mousedown
+        - mouseup
+        - mousemove
+    - Key Board
+        - keyup: Action when key is relesed
+        - keydown: Action on hold down of the key
+        - keypress: Action when new key used after the current.
+    - Animations
+    - Timer etc.
+
+### $event:
+    <input type="button" (click)="F1($event)" value="Red">
+    <input type="button" (click)="F1($event)" value="Green">
+    <input type="button" (click)="F1($event)" value="Blue">
+
+If user click on Red this function is called..generall way
+    F1(X) {
+        x.target.value
+        //code
+    }
+    how we can differentiate, From which button the event had been fired and this function will get execute.?
+    To identify from which button the event has been fired, In javascript we have $event is available.
+
+    $event: will get the refernce of the particular button, from which button the event has been fired, will get the entire reference of this element.
+    whenever you having same function with multiple HTML elements then to identify from where the event has been fired.
