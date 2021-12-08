@@ -1,1 +1,37 @@
-<p>misceleanoues works!</p>
+<div class="container">
+  <table class="table table-hover">
+
+    <thead>
+      <tr>
+        <th>Blur and Focus</th>
+        <th>Cut, Copy and Paste</th>
+        <th>Double Click(dblclick)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><label for="">Username</label></td>
+        <td><label for="">Wrok Here</label></td>
+        <td><label for="">Double click on picture</label></td>
+      </tr>
+
+      <tr>
+        <td><input type="text" [(ngModel)]="uname" [ngStyle]="styleObj" placeholder="Name in block letters"
+            (focus)="ShowMsg()" (blur)="ChangeCase()"></td>
+
+        <td><input type="text" (cut)="OnCut()" (copy)="OnCopy()" (paste)="OnPaste()" placeholder="Cut, Coopy and Paste">
+        </td>
+
+        <td><img src="assets/iphone.jpg" (dblclick)="ViewLarge()" width="50" height="50" alt=""></td>
+      </tr>
+
+      <tr>
+        <td>Msg: <span>{{msg}}</span></td>
+        <td>Status: <span>{{status}}</span></td>
+        <td>msg: on dbl click new window will come</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { KeyeventdemoComponent } from './keyeventdemo/keyeventdemo.component';
 import { MouseEventsComponent } from './mouse-events/mouse-events.component';
 import { MisceleanouesComponent } from './misceleanoues/misceleanoues.component';
+import { OnlineshopComponent } from './onlineshop/onlineshop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeyeventdemoComponent,
     MouseEventsComponent,
-    MisceleanouesComponent
+    MisceleanouesComponent,
+    OnlineshopComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,6 @@ import { MisceleanouesComponent } from './misceleanoues/misceleanoues.component'
     FormsModule
   ],
   providers: [],
-  bootstrap: [MouseEventsComponent]
+  bootstrap: [MisceleanouesComponent]
 })
 export class AppModule { }
