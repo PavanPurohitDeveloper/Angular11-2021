@@ -23,6 +23,6 @@ import { OnlineshopComponent } from './onlineshop/onlineshop.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [MisceleanouesComponent]
+  bootstrap: [OnlineshopComponent]
 })
 export class AppModule { }

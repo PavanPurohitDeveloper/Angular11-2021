@@ -1,1 +1,72 @@
-<p>onlineshop works!</p>
+<div class="container">
+  <div (click)="ShowCart()" class="btn" style="position:fixed;right:10px;top:10px;">
+    <img src="assets/cart.png" width="30" height="30" alt="">
+    <span><b>{{cartItemsCount}}</b></span>
+  </div>
+
+  <h2 class="text-center text-primary">Amazon Shooping</h2>
+
+  <div class="form-group">
+    <label for="">Select Category</label>
+    <div>
+      <!-- list of items that are required for us. once If user selected any item that item I just wanted to get it here then I use [(ngModel)]="selectedCategory" -->
+      <!-- Once category is changed I want to get the value from that also -->
+      <select (change)="CategoryChanged()" class="form-control" [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categories">{{category}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Select Product</label>
+    <div>
+      <select (change)="ProductChanged()" class="form-control" [(ngModel)]="selectedProduct">
+        <option *ngFor="let product of selectedProducts">{{product}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Preview</label>
+    <div class="card text-center">
+      <div class="card-header">
+        <h2>{{prodName}}</h2>
+      </div>
+      <div class="card-body">
+        <img [src]="prodPhoto" width="200" height="200" alt="Image">
+      </div>
+      <div class="card-footer">
+        <h3>&#8377;{{prodPrice}}</h3>
+        <button class="btn btn-primary" (click)="AddToCart()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- *ngIf="isCartVisible" If this condition is true I want to display -->
+  <div class="form-group" *ngIf="isCartVisible">
+    <h2>Your Cart Items</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Preview</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems;let i=index;">
+          <td>{{item.Name}}</td>
+          <td>{{item.Price}}</td>
+          <td>
+            <img [src]="item.Photo" width="50" height="50" alt="" class="img-thumbnail">
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="DeleteCartItem(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
