@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* CSS properties */
+.class1 {
+  background-color: #91e3e9;
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+  float: left
+}
+
+.class2 {
+  background-color: #28abdd;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  float: left;
+}

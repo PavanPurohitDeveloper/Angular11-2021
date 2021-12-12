@@ -1,0 +1,21 @@
+Nested Components:
+-------------------
+Modules:  (AppModule.ts )
+- A Module is used to improve the modularity for the application.
+- A Module in Angular is a typescript class, which contains decorator i.e. "NgModule" ( A typescript class which comes with type "NgModule" decorator that is called Module )
+- Every angular application will contain atleast one Module, default module is "AppModule".
+- "@NgModule" decorator will contain following metadata:   ( decorator contains metadata )
+	- declarations: Used to define directives, components, pipes that are the part of Module.
+	- imports: Used to import the Modules. ( Ex: If you are using "NgModule", we are importing FormsModule )
+	- exports: It is used to export the components from the current module to another module.
+	- providers: Used to register the angular "Services"
+	- bootstrap: Used to initialize starting component.
+
+//How to create a Module..dont give the item type Ex: Module in the end..
+> ng g module IndiaModule
+	CREATE src/app/india-module/india-module.module.ts (197 bytes)
+	
+> ng g module UsaModule
+	CREATE src/app/usa-module/usa-module.module.ts (195 bytes)
+	
+*** We can have any number of Modules and any number of components.
