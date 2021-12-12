@@ -1,0 +1,33 @@
+Pipes: 
+- It is used to transform the data into user-expected format.
+- Pipes are used in interpolation syntax with "|" 
+- syntax: {{property | pipe}} //any name of pipe we can give
+
+Ex: Salary = 1200
+		$1200
+
+Built-in Pipes:
+    - uppercase
+    - lowercase
+    - slice
+    - number
+    - currency
+    - date
+    - percent
+    - json etc.
+
+- If the above pre-defined pipes are not meet our requirement will create custom pipes (user-defined pipes).
+- A custom pipe is a typescript class which contains decorator as "@Pipe()"
+- In the app.module.ts file, Oce you create a Pipe or Directives or Component that must be part of the Module under declaration section it will be registered.
+- Every custom pipe class is implmented from an interface "PipeTransform" and which contains a method "Transform()".
+- To create a pipe using angular cli we use "ng g pipe <anyname>"
+
+//different date formats
+https://angular.io/api/common/DatePipe
+
+> ng g pipe Duration
+C:\MyWorkspace\visual-studio-code-workspace\Angular11-2021\PipesDemo>ng g pipe Duration
+CREATE src/app/duration.pipe.spec.ts (195 bytes)
+CREATE src/app/duration.pipe.ts (221 bytes)
+UPDATE src/app/app.module.ts (505 bytes) 
+

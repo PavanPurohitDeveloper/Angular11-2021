@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PipesDemo';
+
+  city: string = "Hyderabad";
+  salary: number = 7585478;
+  n: number = 0.72;
+  //json object
+  person: object = { firstname: 'Sri', lastname: 'Kanth' };
+  dt: Date = new Date();
+  videoduration: number = 150; //150
+
 }
