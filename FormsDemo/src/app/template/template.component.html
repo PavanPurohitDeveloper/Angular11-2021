@@ -1,0 +1,56 @@
+<div>
+  <h4>Template Driven Forms</h4>
+
+  <!-- for every input element along with form, we using template reference varaible #myform="ngForm".. ngForm is of type..
+  we can access anything by using this form .. template reference varaible are declared with # its a unique name-->
+  <form #myform="ngForm">
+    <!-- [(ngModel)] - two-way data binding  -->
+    <!-- for every input element you should have unique template reference variable name #control1="ngModel to identify -->
+    <!-- All HTML5 validations are supported here -->
+    Firstname:
+    <input type="text" [(ngModel)]="firstname" minlength="3" maxlength="20" pattern="^[a-zA-Z]*$" required="required"
+      name="username" #control1="ngModel">
+
+    <!-- *ngIf is a directive -->
+    <span class="error" *ngIf="control1.touched&&control1.invalid&&control1.errors.required">Firstname required</span>
+    <span class="error" *ngIf="control1.touched&&control1.invalid&&control1.errors.minlength">Minimum 3
+      charecters</span>
+    <span class="error" *ngIf="control1.touched&&control1.invalid&&control1.errors.pattern">Only letters allowed</span>
+    <br>
+
+    Lastname:
+    <input type="text" [(ngModel)]="lastname" name="lastname" #control2="ngModel">
+    <br>
+
+    <!-- #control3="ngModel"-- Its a unique identification and it gets the dynamic value from the form-->
+    Email:
+    <input type="text" #control3="ngModel" name="email" [(ngModel)]="email">
+    <br>
+
+    Amount:
+    <input type="text" #control4="ngModel" name="amount" [(ngModel)]="amount">
+    <br>
+
+    <!-- for radio button "name" should contain same name -->
+    Gender:
+    <input type="radio" name="gender" value="Male" #control5="ngModel" [(ngModel)]="gender"><span>Male</span>
+    <input type="radio" name="gender" value="Female" #control5="ngModel" [(ngModel)]="gender"><span>Female</span>
+    <br>
+
+    Country:
+    <select name="country" [(ngModel)]="country" #control6="ngModel">
+      <option value="">Please select</option>
+      <option>India</option>
+      <option>USA</option>
+      <option>UK</option>
+      <option>London</option>
+    </select>
+    <br>
+
+    <!-- whatever the form name we have pass it here inside Register() function.. template reference value -->
+    <input type="submit" value="Register" (click)="Register(myform)">
+    <div [innerHTML]="msg"></div>
+    <!-- <div>{{msg}}</div> -->
+  </form>
+
+</div>

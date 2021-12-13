@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Custom Pipe
 @Pipe({
   name: 'duration'
 })

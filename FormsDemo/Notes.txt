@@ -1,0 +1,38 @@
+Forms in Angular:
+- Form is used to take input from the user.
+- To implment the forms we have two ways
+    - Template Driven Forms
+    - Model Driven (or) Reactive forms
+
+Template Driven Forms:
+- These are suitable for development of simple forms with limited input elements.
+- Each field represented as a property in component class.
+- Validation rules are applied with HTML5 vaildation  attributes.
+- "FormModule" has to be imported.
+
+HTML5 Validation attributes:
+- required
+- minlength
+- pattern
+- maxlength
+
+
+Validation properties in angular:
+- untouched: If focus is not there until it will return true.
+- touched: Once foucs is there then it will return true.
+- pristine: If focus is there, but user not modify the default value.
+- dirty: If the default value has changed, then it will be dirty.
+- valid: If all the validation controls true, then valid
+- invalid: If a single validation property returns true then invalid.
+- errors: It is object of errors.
+
+Model/Reactive Forms:
+- These are the new forms, which are suitable for creating large forms with many input fileds and complex validations.
+- In these forms, each input filed is represented as "FormControl" and group of controls are represneted as "FormGroup".
+- "ReactiveFormsModule" should be imported from "@angular/forms" package.
+- Validations rules are defined in the component by using "Validators" object.
+
+Validators.required
+Validators.minlength
+Validators.maxlength
+Validators.pattern

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+/* ng-invalid is a class .. untill user is touched validations are happened or not*/
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 2px solid green;
+}
+
+/* for every error color is going to be red */
+.error {
+  color: red;
+}

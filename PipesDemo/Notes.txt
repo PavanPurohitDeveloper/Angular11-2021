@@ -27,7 +27,10 @@ https://angular.io/api/common/DatePipe
 
 > ng g pipe Duration
 C:\MyWorkspace\visual-studio-code-workspace\Angular11-2021\PipesDemo>ng g pipe Duration
-CREATE src/app/duration.pipe.spec.ts (195 bytes)
-CREATE src/app/duration.pipe.ts (221 bytes)
-UPDATE src/app/app.module.ts (505 bytes) 
+	CREATE src/app/duration.pipe.spec.ts (195 bytes)
+	CREATE src/app/duration.pipe.ts (221 bytes)
+	UPDATE src/app/app.module.ts (505 bytes)
+
+
+
 
