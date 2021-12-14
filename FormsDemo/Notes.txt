@@ -16,7 +16,6 @@ HTML5 Validation attributes:
 - pattern
 - maxlength
 
-
 Validation properties in angular:
 - untouched: If focus is not there until it will return true.
 - touched: Once foucs is there then it will return true.

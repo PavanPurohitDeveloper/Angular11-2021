@@ -1,0 +1,57 @@
+<div>
+  <h4>Reactive Forms</h4>
+  <!-- we are not writing any validations in HTML/template ..validations are specified inside component-->
+
+  <form [formGroup]="myform">
+
+    FirstName:
+    <input type="text" formControlName="firstname">
+    <span class="error"
+      *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && myform.controls.firstname.errors.required">firstname
+      is mandatory</span>
+
+    <span class="error"
+      *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && myform.controls.firstname.errors.minlength">Min
+      3 charecters</span>
+
+    <span class="error"
+      *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && myform.controls.firstname.errors.maxlength">Max
+      20 charecters</span>
+
+    <span class="error"
+      *ngIf="myform.controls.firstname.touched && myform.controls.firstname.invalid && myform.controls.firstname.errors.pattern">Invalid
+      pattern</span>
+    <br>
+
+    Lastname:
+    <input type="text" formControlName="lastname">
+    <br>
+
+    Email:
+    <input type="text" formControlName="email">
+    <br>
+
+    Amount:
+    <input type="text" formControlName="amount">
+    <br>
+
+    Gender:
+    <input type="radio" formControlName="gender" name="gender" value="Male">Male
+    <input type="radio" formControlName="gender" name="gender" value="Female">Female
+    <br>
+
+    Country:
+    <select formControlName="country">
+      <option>India</option>
+      <option>UK</option>
+      <option>USA</option>
+    </select>
+
+    <br>
+    <input type="submit" value="Register" (click)="Register()">
+    <br>
+
+    <div [innerHTML]="msg"></div>
+  </form>
+
+</div>
