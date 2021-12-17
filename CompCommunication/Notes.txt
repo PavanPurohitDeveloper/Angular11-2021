@@ -1,0 +1,5 @@
+Component Communication:
+- @Input() : It is used to pass the data from parent component to child component.
+- @Output(): It is ussed to pass the data from child to parent component, but here inorder to pass the data we use "EventEmitter".
+- @ViewChild(): It is used to send data from one component to another component.
+- @ViewChildren(): To send the data across multiple components.

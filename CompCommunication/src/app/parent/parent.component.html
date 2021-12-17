@@ -1,0 +1,6 @@
+<!-- Whatever the Child component selector(<app-child>) we have here that child component selector we suppose to invoke from the parent component HTML. so relation is estanblished over here. -->
+<app-child <!-- attribute binding -- when u send data from parent to child -->
+  [PID]="x.pID" [PName]="x.pName" [Cost]="x.Cost"
+  <!-- event binding from child to parent -->
+  (sendData)="myFun($event)" *ngFor="let x of products">
+</app-child>
