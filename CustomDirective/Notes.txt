@@ -1,0 +1,14 @@
+Custom Directives:
+- A directive is reusable dynamic user interface.
+- A directive will be used to provide additional dyenmic behaviour to the DOM by adding/removing the element or by changing the behaviour.
+- Example: *ngIf, *ngIfthenelse, *ngSwitch, *ngFor, [ngStyle],[ngClass] etc.
+- Component itself is a directive. How we are invoking component ? by using selector only.
+- If these directives are not meet our requirement will use "Custom Directives". For re-usability purpose we use "Custom Directives".
+- A custom directive is a class (type script class), which is having a decorator "@Directive()" which is having a name "directive name".
+- Directive is always going to be Child elemnets. Component is also a directive that is going to be the Parent one.
+- To work with this we use
+    - Directive: Used to assign logical name.
+    - Input: Used to pass dynemic value.
+    - HostListener: Used to apply the events for directives.
+    - ElementRef: It is used to Manipulate the DOM.
+-  To generate a directive using Angular CLI we use "ng g directive <name>".
