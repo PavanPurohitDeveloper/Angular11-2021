@@ -1,0 +1,33 @@
+<h1 style="color:green;text-align:center;">Countries Information</h1>
+<hr>
+<table border="1" cellpadding="10px" cellspacing="10px" align="center">
+
+  <thead style="background-color: pink;">
+    <tr>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Borders</th>
+      <th>Flag</th>
+    </tr>
+  </thead>
+
+  <tbody style="background-color: rosybrown;">
+    <tr *ngFor="let x of result">
+      <td>{{x.name}}</td>
+      <td>{{x.capital}}</td>
+
+      <td>
+        <ul>
+          <li *ngFor="let y of x.borders">{{y}}</li>
+        </ul>
+      </td>
+
+      <td>
+        <!-- alt - alternat text -->
+        <img [src]="x.flag" alt="Country Flag" height="100px" width="100px">
+      </td>
+
+    </tr>
+  </tbody>
+
+</table>
