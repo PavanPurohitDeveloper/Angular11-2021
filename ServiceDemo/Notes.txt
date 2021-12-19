@@ -17,7 +17,7 @@ Services in Angular:
 - A service can be used in another service also.
 - To create a service we use an Angular CLI command like "ng g service <name>".
 - Once we create a service we can register and use in 3 ways
-    - Global(Angular 9.0)
+    - Global(Angular 9.0)  //Entire application if you want use then providedIn:'root'
         @Injectable({
             providedIn:'root'
         })
@@ -33,3 +33,41 @@ Services in Angular:
 Dependency Injection -  is a design pattern. where the Objects are created based on usages.. on-demand Objects creation. Create an Object on-demand basis. we are properly handling the particualr object. Whenever requirement comes, then only the Object will be created.
 To Inject the Services.
 By using Constructor we do dependency Injection.
+
+### ngOnInit():
+----------------
+//ngOnInit() == whenever this component is loaded generally it is something like on-load event. Whenever this component is loaded, then this method will get automatically invoked.
+  ngOnInit() {
+    this.sqlData = this._serv.mySqlData();
+  }
+
+##### To resolve this below exception:
+----------------------------------------
+Failed to compile.
+src/app/app.component.html:1:1 - error NG8001: 'first' is not a known element:
+1. If 'first' is an Angular component, then verify that it is part of this module.
+2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.
+
+1 <first></first>
+  ~~~~~~~
+
+  src/app/app.component.ts:5:16
+    5   templateUrl: './app.component.html',
+                     ~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component AppComponent.
+
+Solution: define the component in app.module.ts inside declarations section..
+	@NgModule({
+	  declarations: [
+		AppComponent,
+		FirstComponent,
+		SecondComponent
+	  ],
+	  imports: [
+		BrowserModule,
+		AppRoutingModule
+	  ],
+	  providers: [],
+	  bootstrap: [AppComponent]
+	})
+	export class AppModule { }
