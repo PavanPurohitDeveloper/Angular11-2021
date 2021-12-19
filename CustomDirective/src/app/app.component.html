@@ -1,4 +1,10 @@
 <!-- "myDir" is directive name.. whenever user click mouse on this I want to change dynemic styles like background color etc.. I dont want to use [ngStyle],[ngClass].. same directive I can apply for multiple elements.. next generate a directive-->
+<!-- myDir is behavioural directive which is changing the styles dynemically -->
+<!-- Structural directive: which can be used to add or remove the element/DOM.
+    Ex: <h1 *myDir>Welcome to Custom Structural Directive</h1>
+  	If this "myDir" value is true, then only this element has to be displayed.
+	  If this "myDir" value is false, then this element should not display on the DOM.
+-->
 <h1 myDir [var_one]=color1.value [var_two]=color2.value>Welcome to Custom Directives</h1>
 
 
