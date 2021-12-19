@@ -1,0 +1,20 @@
+Services in Angular:
+- A service is also a reusable class, which can be used to share the data from one to many components.
+- Every service class can have @Injectable(), and this is avaible in core library of angular.
+- We can have few pre-defined services and also we can create our own service as well.
+- Every service if we want to make use of it in component/service we use a concept of "Depedency Injuction".
+- A service can be used in another service also.
+- To create a service we use an Angular CLI command like "ng g service <name>".
+- Once we create a service we can register and use in 3 ways
+    - Global(Angular 9.0)
+        @Injectable({
+            providedIn:'root'
+        })
+    - At Module level
+        @NgModule({
+            providers:[name of service]
+        })
+    - At Component Level
+        @Component({
+            providers:[name of service]
+        })
