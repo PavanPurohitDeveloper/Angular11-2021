@@ -1,8 +1,19 @@
 Services in Angular:
 - A service is also a reusable class, which can be used to share the data from one to many components.
-- Every service class can have @Injectable(), and this is avaible in core library of angular.
+	Ex: I want to retrieve employee data from database.
+	I want to use this data into 10 components
+	Database ==> Employee ==> Component-1
+	Database ==> Employee ==> Component-2
+	Database ==> Employee ==> Component-3
+								|
+							 Service
+	data retrieving is common functionality.. Instead of writing in each component..
+	Total functionality I will create as separate one using "Service" class
+	Each Service is communicating with each components.
+
+- Every service class can have @Injectable() decorator, and this is avaible in core library of angular ('@angular/core').
 - We can have few pre-defined services and also we can create our own service as well.
-- Every service if we want to make use of it in component/service we use a concept of "Depedency Injuction".
+- Every service if we want to make use of it in component/service we use a concept of "Dependency Injection".
 - A service can be used in another service also.
 - To create a service we use an Angular CLI command like "ng g service <name>".
 - Once we create a service we can register and use in 3 ways
@@ -18,3 +29,7 @@ Services in Angular:
         @Component({
             providers:[name of service]
         })
+
+Dependency Injection -  is a design pattern. where the Objects are created based on usages.. on-demand Objects creation. Create an Object on-demand basis. we are properly handling the particualr object. Whenever requirement comes, then only the Object will be created.
+To Inject the Services.
+By using Constructor we do dependency Injection.
