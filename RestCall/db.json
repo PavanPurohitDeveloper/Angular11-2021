@@ -1,0 +1,54 @@
+{
+  "contacts": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Ramesh",
+      "location": "Guntur"
+    },
+    {
+      "id": 3,
+      "name": "Suresh",
+      "location": "Vizag"
+    },
+    {
+      "id": 4,
+      "name": "Scott",
+      "location": "USA"
+    },
+    {
+      "id": "5",
+      "name": "Swathi",
+      "location": "Banglore"
+    },
+    {
+      "id": "10",
+      "name": "Srikanth",
+      "location": "Guntur"
+    },
+    {
+      "id": 6,
+      "name": "Dyansh",
+      "location": "Goa"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

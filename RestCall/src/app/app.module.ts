@@ -6,18 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries.component';
 import { CountriesService } from './countries.service';
+import { MockComponent } from './mock/mock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountriesComponent
+    CountriesComponent,
+    MockComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule //HttpClientModule will contain the definition of HttpClient class
   ],
   providers: [CountriesService],
-  bootstrap: [CountriesComponent]
+  //bootstrap: [CountriesComponent]
+  bootstrap: [MockComponent]
 })
 export class AppModule { }

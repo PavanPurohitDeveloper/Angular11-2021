@@ -1,21 +1,24 @@
 
 Example to connect with server using HttpClient Class:
-- HttpClient is a pre-defined class which is used to communicate with server and performing CRUD Operations.
+- HttpClient is a pre-defined class which is used to communicate with server and performing all the CRUD Operations.
 - To use this class we need to import a package "@angular/common/http".
 - This HttpClient class will return the data in the form of "Observable", where Observable is a type.
 - This class will communicate with server and get the updates whenever we have.
 - This class is avaible in "RxJS" library.  https://angular.io/guide/rx-library
 - "RXJS" is nothing but "Reactive Extensions for JavaScript".
 - Mainly used for Communicating with the server and retrieving the data..Performs HTTP requests. This service is available as an injectable class, with methods to perform HTTP requests.
+- - HttpClientModule will contain the definition of HttpClient class.. so we need to Import in app.module.ts file.
 
-HttpClient Get Method:
+HttpClient "Get" Method:
 - It is used to retrive the data.
-- To any call we need to have an endpoint(url) and it can be created either by using .Net,Java,Php, MangoDB, JsonDB etc.
+- To make any call we need to have an endpoint(URL) and it can be created either by using .Net,Java,Php, MangoDB, JsonDB etc.
 - HttpClient methods options
     - HttpHeader
     - HttpParams
 
-HttpClient Post Method:
+*** Basically Every call whatever we making will return the data or accepting the data in the form of JSON only.
+
+HttpClient "Post" Method:
 - It is used to insert the data into the server.
 - With Post method we suppose to give Url(Endpoint) along with the data.
 
@@ -28,3 +31,21 @@ API endpoint:
 https://restcountries.com/v2/all
 https://www.w3schools.com/angular/customers.php
 https://api.covid19api.com/summary
+
+
+### Json server:
+locally we can create the data. Its kind of mock data.
+
+To create a Json server...Install JSON Server globally
+> C:\MyWorkspace\visual-studio-code-workspace\Angular11-2021\RestCall> npm i json-server
+
+Start JSON Server
+> json-server --watch db.json
+It creates a db.json file in the project folder.
+
+Now if you go to http://localhost:3000/posts/1, you'll get
+http://localhost:3000/posts/
+http://localhost:3000/comments/
+http://localhost:3000/profile/
+http://localhost:3000/contacts
+The data whatever we getting it must be in JSON format only.
