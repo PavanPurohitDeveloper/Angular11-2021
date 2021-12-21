@@ -1,0 +1,13 @@
+<h1>Calling Post API using HttpClient Class</h1>
+<hr>
+<!-- 1. Template driven forms
+2. Model driven forms -->
+
+<!-- 1. Template driven forms .. #userPost is template reference variable .. "ngModel" is for 2 way data binding purpose-->
+<!-- Once if user click on Submit we have event (ngSubmit) -->
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+  <input type="text" name="id" placeholder="Enter ID" ngModel><br><br>
+  <input type="text" name="name" placeholder="Enter Name" ngModel><br><br>
+  <input type="text" name="location" placeholder="Enter Location" ngModel><br><br>
+  <input type="submit" value="Insert">
+</form>

@@ -32,6 +32,16 @@
       "id": 6,
       "name": "Dyansh",
       "location": "Goa"
+    },
+    {
+      "id": "7",
+      "name": "Pavan",
+      "location": "Hyderabad"
+    },
+    {
+      "id": "8",
+      "name": "Srikanth",
+      "location": "Bangalore"
     }
   ],
   "posts": [
