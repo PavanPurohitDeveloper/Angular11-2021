@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+#container {
+  background-color: #ccccff;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.class1 {
+  text-align: center;
+  padding-right: 10px;
+}
+
+/* some spaces in between for hyperlinks */
+a {
+  padding-right: 10px;
+}

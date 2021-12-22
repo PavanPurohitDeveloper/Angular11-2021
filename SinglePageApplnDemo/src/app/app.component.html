@@ -1,0 +1,18 @@
+<div class="class1">
+  <h4>Routing</h4>
+  <!-- we should not define href here .. routerLink is separate directive created by angular team .. whatever names we specify in routerLink="home" should match with path specified in app.module.ts file -->
+  <a routerLink="home">Home</a>
+  <a routerLink="about">About</a>
+  <a routerLink="contact">Contact</a>
+</div>
+
+<!-- separate div -->
+<div id="container">
+  <!-- router-outlet is a placeholder where you want to render the result -->
+  <router-outlet></router-outlet>
+</div>
+
+<!-- If user click on Home hyperlink , It will send the request to HomeComponent and it will execute and from here it loads
+the content into the <router-outlet>
+  Similarly, when I am sending the request for contact that means if user click on Contact first it will send the
+  request to particular component and from here it will go to the <router-outlet> -->

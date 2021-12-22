@@ -1,0 +1,23 @@
+SPA:
+- It is an application for every request It won't reload the entire page.
+- To implement it we use "Routing" mechanism
+- Routing - is basically a mechanism to provide the navigation for angular application.
+- It is used to map the incoming request to the specified URL in the routing mechanism.
+
+http://localhost:4200/home    --- automatically It maps related component "HomeComponent"
+http://localhost:4200/admin   --- automatically It maps to "AdminComponent" and it is getting executed.
+
+- To work with Routing we have to include "RoutingModule" from @angular/core package.
+
+Steps:
+- Import the package. (  Verify inside package.json file - "@angular/router": "~11.2.0"  )
+- Set the base location for the application on server. ( i.e.  verify inside index.html for base location <base href="/">  BY default slash )
+- Import ( Routes ) from "@angular/router".  ( while creating the project If you select routing yes then it will create this file app-routing.module.ts file )
+( Step 1 to 3 not required for advanced versions of angular)
+- Create the Routes.
+- Import the Router "RoutingModule".
+- Combine the routes with Router Module.
+- Include them in AppModule.
+- Create the Hyperlinks by using [routerLink].
+- Place holder by using <router-outlet>.
+
