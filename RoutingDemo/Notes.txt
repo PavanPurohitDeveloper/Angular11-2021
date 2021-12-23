@@ -1,0 +1,24 @@
+Child Routes:
+- Route can have child routes upto unlimited no. of nested level.
+- To work with this we have to follow below steps.
+
+
+1. Create the Child Routes.
+    {path: 'parentPath', component: ComponentName, children: [
+      {path: 'childPath', component: ChildComponentName},
+      {path: 'childPath', component: ChildComponentName},
+      {path: 'childPath', component: ChildComponentName}
+    ]}
+
+2. Create the Hyperlinks for Child path.
+    <a routerLink = "/parentpath/childpath">Link Text</a>
+
+3. Create the <router-outlet> for child routes ( in the parent route component's template).
+    <router-outlet></router-outlet>
+
+
+Route Guards:
+- Guard is nothing but which provides some security.
+- Route Guards which provides security for Routing
+- The Guard is a service that executes at the specified situation while angular is navigating from one route to another route.
+
