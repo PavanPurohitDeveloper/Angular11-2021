@@ -42,3 +42,8 @@ Route Guards:
 - It executes before we leave the route.
 - It is also a Service which was implemented from CanDeactivate Guard.
 - It contains one method CanDeactivate() and returns boolean value, which indicates whether the route can be leave or not.
+
+-- We have different routes avilable in our appln. ( app-routing.module.ts )
+   route - is kind of URL.. user may access anything.. previliegs based on client requirement
+   My requirement is whenever if they want to access the "Electronics" page/component, I just need to verify whether user is having a valid credentials or not.
+   Before they enter into particular route, we need to execute some logic based on true or false , I just allow the user to enter into that particular one.. then u go "canActivate" guard.
