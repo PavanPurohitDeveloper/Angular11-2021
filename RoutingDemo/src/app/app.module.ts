@@ -13,6 +13,11 @@ import { MobilesComponent } from './mobiles/mobiles.component';
 import { LaptopsComponent } from './laptops/laptops.component';
 import { MensComponent } from './mens/mens.component';
 import { WomensComponent } from './womens/womens.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +31,16 @@ import { WomensComponent } from './womens/womens.component';
     MobilesComponent,
     LaptopsComponent,
     MensComponent,
-    WomensComponent
+    WomensComponent,
+    LoginComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

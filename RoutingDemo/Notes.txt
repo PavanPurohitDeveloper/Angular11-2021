@@ -19,6 +19,26 @@ Child Routes:
 
 Route Guards:
 - Guard is nothing but which provides some security.
-- Route Guards which provides security for Routing
+- Route Guards which can provides security for Routing
 - The Guard is a service that executes at the specified situation while angular is navigating from one route to another route.
+- We have following Guards:
+	- CanActivate -- This executes before we enter into the routing.
+	- CanDeactivate -- This executes before we leave the route. Ex:
+	- CanChildActive -- This executes before we enter into a child routing.
+	- CanLoad -- This is used for lazy loading.
 
+    Once If user clicks on the hyperlink, it identify the route and identify the guard whether it is there are not.. if its there then you can go with that..
+
+1. CanActivate:
+- It executes before we enter into a routing.
+															what it is getting identified..whthere Route is having
+- Process ==> User Click on Hyperlink ==> It will Identify the Route ==> CanActivate  ==> It will execute that Logic ==> Execute corresponding component.
+- Every guard is a service which is having an interface "CanActivate", and it comes with a method "CanActivate" which is boolean type.
+- To apply this we use
+	{path: 'parentPath', component: ComponentName, CanActivate: [ServiceName]}
+	whenever user click on this particular path, this component has to be loaded earlier, but now this component is loaded only if this Service returns true.
+
+## CanDeactivate:
+- It executes before we leave the route.
+- It is also a Service which was implemented from CanDeactivate Guard.
+- It contains one method CanDeactivate() and returns boolean value, which indicates whether the route can be leave or not.

@@ -1,0 +1,21 @@
+<div>
+  <!-- If loginStatus is false , suppose if user is not logged in...display the login form Else take another div-->
+  <div *ngIf="!loginStatus">
+    <form>
+      <h5>Login Form</h5>
+      <!-- #T1 -- if you want to reference of that.. template reference -->
+      Username: <input type="text" name="username" [(ngModel)]="username" #T1><br>
+      Password: <input type="text" name="password" [(ngModel)]="password"><br>
+      <!-- pass the T1 value here, so that you can access entire reference of HTML element also -->
+      <input type="button" value="Login" (click)="CheckLogin(T1)"><br>
+      <h5>{{message}}</h5>
+    </form>
+  </div>
+  <!-- Else loginStatus is success, display submit button which will be logout   -->
+  <div *ngIf="loginStatus">
+    <form>
+      <input type="button" value="Logout" (click)="Logout()"><br>
+    </form>
+  </div>
+
+</div>
