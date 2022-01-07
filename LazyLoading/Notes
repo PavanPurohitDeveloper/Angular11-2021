@@ -1,0 +1,8 @@
+Lazy loading:
+- It is all about loading a Component based on demand.
+Suppose One component which may have more data, for that particular one I dont want to execute at Initial load. whenever user is requested then only I want to load into the appln. On demand loading.
+
+Create always One Component - One Module..
+
+  loadChildren? is mainly used for LazyLoading..
+  canLoad?
