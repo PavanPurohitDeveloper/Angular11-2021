@@ -1,0 +1,20 @@
+Unit Testing:
+- It is also a testing process which can be used to test developement code.
+- This testing can be done by the developers who developed the code.
+- it helps you to identify bugs, any gap or missing the requirements, so that we can fix them and develop the quality product.
+
+    Unit Testing   ==> Integration Testing => System Testing =>  Acceptency Testing
+    Angular Dev           Server Side Dev       QA/Testers          BA/UAT
+- Unit testing is a method, where each unit or component of a software is tested to determine wether it is fit to use or not.
+- unit testing can be implemented for all the angular elements like Components, Pipes, Services, Directives beacuse in angular every element is a class.
+
+Note: By default when we create any angular element by using Angular CLI, it creates a seperarte file for unit testing with an extention i.e. "*.spec.ts", where "spec" stands for specification.
+- To check the test cases are running fine or not we use a command "ng test".
+
+Environment:
+- Node JS
+- Angular CLI
+- Test Framework like Karma, Jasmin 
+
+
+

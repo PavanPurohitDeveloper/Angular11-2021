@@ -1,0 +1,27 @@
+Unit Testing:
+- Unit Testing is a process of testing the individual component, whether it is working correctly or not before we are sending the code into QA environment.
+- Developers will takes the responsibility to write the unit test cases before sending the code.
+- To do the unit testing we use "Jasmine" and "Karma" frameworks.
+- In angular to write the test cases we use "*.component.spec.ts" files.
+
+Example:
+function Add(x: number, y: number) {
+	if(NaN(x) || Nan(y)) {
+		console.log('It should be a number');
+	}
+	return x+y;
+}
+Add("10", "20");  ==> 1020   ==> Test Failed
+Add(10, "20") 	  ==> It should be a number ==> Test is Success
+
+
+Jasmine: Used to create the testcases.
+Karma: Used to executes the test cases in multiple browsers.
+Protractor: Used to execute the test cases on single browser(Outdated).
+
+Dev Env <=> QA/Testing Env => Production Env
+
+- All the test cases are represented with a function i.e. "describe()"
+- Each test case is represented with a function i.e. "it()".
+- Suppose if we want to execute some logic and that logic can be used for ultiple times then we use "beforeEach()".
+- To create a test module we use "TestBed.configureTestingModule()"
