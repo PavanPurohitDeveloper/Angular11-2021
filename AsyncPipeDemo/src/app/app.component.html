@@ -1,0 +1,17 @@
+<div>
+  <h4>
+    Async Pipe Demo with Promises and Observables
+    <!-- | async -- By using this async this promise object will fecth the data every 3 seconds.
+    Promises  will return single value.. Observable return multiple values.
+    -->
+    <span style="color: green;"> {{promise | async }}</span>
+    <br><br>
+    Async Pipe Demo with Observable
+    <span style="color: green;"> {{observable$ | async }}</span>
+    <br><br>
+    Async Pipe Demo with Susbscribe
+    <span style="color: green;"> {{observableData}}</span>
+
+  </h4>
+
+</div>
